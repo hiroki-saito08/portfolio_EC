@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -18,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/dashboard';
+    public const HOME = '/';
     public const ADMIN_HOME = '/admin/dashboard';
 
     /**
@@ -35,7 +34,8 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected $namespace = 'App\Http\Controllers';
+    // protected $namespace = 'App\Http\Controllers';
+
     public function boot()
     {
         $this->configureRateLimiting();

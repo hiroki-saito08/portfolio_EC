@@ -62,15 +62,28 @@
             <a href="">
               <img class="logo-img" src="{{ asset('images/account02.png') }}" alt="" >
             </a>
+
+            <div class="mt-3 space-y-1">
+                <!-- Authentication -->
+                <form method="POST" action="{{ route('user.logout') }}">
+                    @csrf
+
+                    <x-responsive-nav-link :href="route('user.logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-responsive-nav-link>
+                </form>
+            </div>
           </div>
 
           @else
           <div class="h-img-right">
-            <a href="">ログイン</a>
+            <a href="{{ route('user.login') }}">ログイン</a>
           </div>
 
           <div class="h-img-right">
-            <a href="">新規登録</a>
+            <a href="{{ route('user.register') }}">新規登録</a>
           </div>
 
           @endauth
