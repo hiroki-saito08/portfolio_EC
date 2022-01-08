@@ -18,6 +18,7 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     public const HOME = '/dashboard';
+    public const ADMIN_HOME = '/admin/dashboard';
 
     /**
      * The controller namespace for the application.
@@ -43,9 +44,21 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->namespace)
                 ->group(base_path('routes/api.php'));
 
-            Route::middleware('web')
+            // ユーザー部分も初期から変更
+            // prefixで全てのルーティングの冒頭に()内がつく
+            // asで名前を指定できる。web.phpの全てのルーティングの冒頭に/を指定
+            Route::prefix('/')
+                ->as('user.')
+                ->middleware('web')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
+
+            // admin.phpの全てのルーティングの冒頭にadminを指定
+            Route::prefix('admin')
+                ->as('admin.')
+                ->middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/admin.php'));
         });
     }
 
