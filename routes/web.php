@@ -18,15 +18,15 @@ use App\Http\Controllers\User\ProductController;
 //     return view('user.top');
 // });
 
-Route::get('/dashboard', function () {
-    return view('user.dashboard');
-})->middleware(['auth:users'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('user.dashboard');
+// })->middleware(['auth:users'])->name('dashboard');
 
 
 //〜〜ユーザーが操作できる機能〜〜
 
 //ユーザーのトップページ
-Route::get('/', [ProductController::class, 'index'])->name('index');
+Route::get('/', [ProductController::class, 'index'])->name('top');
 
 //ユーザー情報編集
 Route::get('user/edit', 'UserController@edit')->name('edit');

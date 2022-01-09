@@ -36,7 +36,7 @@
                 @if (Route::has('admin.login'))
                     <div class="hidden sm:block">
                         @auth('admin')
-                            <a href="{{ url('/admin/dashboard') }}" class="text-lg text-gray-700 dark:text-gray-500 underline">管理者用ページへ</a>
+                            <a href="{{ url('/admin') }}" class="text-lg text-gray-700 dark:text-gray-500 underline">管理者用ページへ</a>
                         @else
                             <a href="{{ route('admin.login') }}" class="text-lg text-gray-700 dark:text-gray-500 underline">ログイン</a>
 
