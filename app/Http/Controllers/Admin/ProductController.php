@@ -16,8 +16,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //管理者TOPページ（元welcomページ）
-        return view('admin.top');
+        $products = Product::all();
+        //管理者TOPページ
+        return view('admin.top', compact('products'));
     }
 
     /**
@@ -45,19 +46,25 @@ class ProductController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:20'],
             'price' => ['required', 'integer'],
-            'image_path' => ['required', 'string', 'max:20'],
             'size' => ['required', 'alpha', 'max:5'],
             'category' => ['required', 'string', 'max:20'],
+            'image_path' => ['required'],
         ]);
+
+        //画像保存処理
+        // 拡張子を含めたファイル名を取得
+        $file_name = $request->file('image_path')->getClientOriginalName();
+        //ファイルを保存
+        $request->file("image_path")->storeAs("public", $file_name);
 
         //商品作成処理
         Product::create([
             'admin_id' => $user->id,
             'name' => $request->name,
             'price' => $request->price,
-            'image_path' => $request->image_path,
             'size' => $request->size,
             'category' => $request->category,
+            'image_path' => $file_name,
         ]);
 
         // フラッシュメッセージ

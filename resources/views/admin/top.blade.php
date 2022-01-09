@@ -17,12 +17,24 @@
                     <a href="{{ route('admin.create') }}" class="text-lg text-gray-700 dark:text-gray-500 underline">商品投稿ページへ</a>
                 </div>
 
-                <div class="p-6 bg-white border-b border-gray-200">
-                    {{-- @foreach($products as $product)
-                    @endauth --}}
-                </div>
 
             </div>
+
+            <div class="p-6 bg-white border-b border-gray-200">
+                < 商品一覧 >
+            </div>
+            @foreach($products as $product)
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <div> <img src="{{ asset('/storage/'.$product -> image_path) }}" alt="画像が登録されてません"></div>
+                    <div> 商品名： {{ $product -> name }}</div>
+                    <div> 値段： {{ $product -> price }}</div>
+                    <div> サイズ： {{ $product -> size }}</div>
+                    <div> カテゴリー： {{ $product -> category }}</div>
+                </div>
+            @endforeach
+
+            <div class="pt-4">end</div>
+
         </div>
     </div>
 </x-app-layout>
