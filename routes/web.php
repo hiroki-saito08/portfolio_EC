@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\ProductController;
+use App\Http\Controllers\User\KeepController;
+use App\Http\Controllers\User\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,41 +31,40 @@ use App\Http\Controllers\User\ProductController;
 //ユーザーのトップページ
 Route::get('/', [ProductController::class, 'index'])->name('top');
 
-//ユーザー情報編集
-Route::get('user/edit', 'UserController@edit')->name('edit');
-Route::post('user/update', 'UserController@update');
-
 //商品詳細ページ
-// Route::get('product/{id}/show', 'ProductController@show')->name('product.show');
-
+Route::get('product/{id}/show', [ProductController::class, 'show'])->name('product.show');
 //検索機能
-Route::get('search', 'ProductController@search')->name('product.search');
-Route::post('search', 'ProductController@search');
+Route::post('search', [ProductController::class, 'search'])->name('product.search');
 
-//カート機能
-Route::post('cart/{id}/add', 'CartController@add')->name('cart.add');
-Route::post('cart/{id}/delete', 'CartController@delete')->name('cart.delete');
 
-//キープ機能
-Route::post('keep/{id}/add', 'KeepController@add')->name('keep.add');
-Route::post('keep/{id}/delete', 'KeepController@delete');
+//ユーザー情報編集ページ
+Route::get('{id}/edit', [UserController::class, 'edit'])->name('edit');
+// ユーザー情報更新機能
+Route::post('{id}/update', [UserController::class, 'update'])->name('update');
 
-//商品購入
-Route::post('product/{id}/purchase', 'ProductController@add');
-
-//カートページ
-Route::get('cart', 'CartController@index')->name('product.cart');
 
 //キープページ
-Route::get('/products/keep', 'KeepController@index')->name('product.keep');
+Route::get('keep', [KeepController::class, 'index'])->name('keep');
+//キープに追加
+Route::post('keep/{id}/add', [KeepController::class, 'add'])->name('keep.add');
+// キープから削除
+Route::post('keep/{id}/delete', [KeepController::class, 'delete'])->name('keep.delete');
 
-//商品購入履歴ページ
-Route::get('/products/history', 'ProductController@history')->name('product.history');
 
-//最終確認画面
-Route::post('Check', 'ProductController@Check')->name('product.check');
-
+//カートページ
+Route::get('cart', [CartController::class, 'index'])->name('cart');
+//カートに追加
+Route::post('cart/{id}/add', [CartController::class, 'add'])->name('cart.add');
+//カートから削除
+Route::post('cart/{id}/delete', [CartController::class, 'delete'])->name('cart.delete');
+//購入確認画面
+Route::post('Check', [CartController::class, 'Check'])->name('cart.check');
+//商品購入処理
+Route::post('cart/{id}/purchase', [CartController::class, 'purchase'])->name('cart.purchase');
 //購入完了ページ
-Route::get('complete', 'ProductController@complete')->name('product.complete');
+Route::get('complete', [CartController::class, 'complete'])->name('cart.complete');
+//商品購入履歴ページ
+Route::get('history', [CartController::class, 'history'])->name('cart.history');
+
 
 require __DIR__ . '/auth.php';

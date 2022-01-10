@@ -5,40 +5,36 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
-use App\Models\Complete;
 use App\Models\Keep;
+use App\Models\Cart;
 use Auth;
 
 class ProductController extends Controller
 {
-
+    //ユーザーのトップページ
     public function index()
     {
-        //管理者TOPページ
-        $user_id = Auth::id();
+        $user = Auth::user();
         $products = Product::all();
         // $keeps = Keep::where('user_id',$user_id)->get();
-        return view('user.top', compact('products'));
+        return view('user.top', compact('user', 'products'));
     }
 
     //商品詳細ページ
-    public function show()
+    public function show($id)
     {
-        return view('products.show');
+        $product = Product::find($id);
+        return view('user.top', compact('products'));
     }
 
-    public function history()
-    {
-        //$user = Auth::user();
-        $user = 'App\Models\User'::find(1);
-        return view('products.history', compact('user'));
-    }
-
+    //検索機能
     public function search(Request $request)
     {
+        $user = Auth::user();
         $words = $request->input('words');
-        // $products = Product::where('name', 'like', '%' . $words . '%')->get();
-        // $keeps = Keep::where('user_id', 1)->get();
-        return view('top', compact('products', 'keeps'));
+        $products = Product::where('name', 'like', '%' . $words . '%')->get();
+        $keeps = Keep::where('user_id', $user->id)->get();
+
+        return view('user.top', compact('products', 'keeps', 'user'));
     }
 }

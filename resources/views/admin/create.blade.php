@@ -17,7 +17,7 @@
                       <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">商品登録</h1>
                     </div>
                     <div class="lg:w-1/2 md:w-2/3 mx-auto">
-                      <form method="post" action="{{ route('admin.store')}}"  enctype="multipart/form-data">
+                      <form method="post" action="{{ route('admin.product.store')}}"  enctype="multipart/form-data">
                         @csrf
                         <div class="-m-2">
                           <div class="p-2 w-1/2 mx-auto" >

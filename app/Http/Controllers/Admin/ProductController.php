@@ -71,7 +71,7 @@ class ProductController extends Controller
 
         // フラッシュメッセージ
         return redirect()
-            ->route('admin.create')
+            ->route('admin.product.create')
             ->with('message', '商品を登録しました。');
     }
 
