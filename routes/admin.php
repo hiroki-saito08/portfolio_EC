@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Admin\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,12 +26,24 @@ Route::get('/', function () {
   return view('admin.welcome');
 });
 
-Route::get('/dashboard', function () {
-  return view('admin.dashboard');
-})->middleware(['auth:admin'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//   return view('admin.dashboard');
+// })->middleware(['auth:admin'])->name('dashboard');
 
 
+//〜〜管理者が操作できる機能〜〜
 
+//管理者のトップページ
+Route::get('/', [ProductController::class, 'index'])->middleware(['auth:admin'])->name('top');
+
+//商品登録ページ
+Route::get('/product/create', [ProductController::class, 'create'])->middleware(['auth:admin'])->name('create');
+Route::post('/product/store', [ProductController::class, 'store'])->middleware(['auth:admin'])->name('store');
+Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->middleware(['auth:admin'])->name('edit');
+Route::post('/product/update', [ProductController::class, 'update'])->middleware(['auth:admin'])->name('update');
+
+
+// 以下はAuth.phpの内容をコピーしadmin用に編集したもの
 Route::get('/register', [RegisteredUserController::class, 'create'])
   ->middleware('guest')
   ->name('register');
