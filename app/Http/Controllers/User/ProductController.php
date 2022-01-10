@@ -11,6 +11,16 @@ use Auth;
 
 class ProductController extends Controller
 {
+
+    public function index()
+    {
+        //管理者TOPページ
+        $user_id = Auth::id();
+        $products = Product::all();
+        // $keeps = Keep::where('user_id',$user_id)->get();
+        return view('user.top', compact('products'));
+    }
+
     //商品詳細ページ
     public function show()
     {
@@ -22,14 +32,6 @@ class ProductController extends Controller
         //$user = Auth::user();
         $user = 'App\Models\User'::find(1);
         return view('products.history', compact('user'));
-    }
-
-    public function index()
-    {
-        // $user_id = Auth::id();
-        // $products = Product::all();
-        // $keeps = Keep::where('user_id',$user_id)->get();
-        return view('user.top');
     }
 
     public function search(Request $request)
