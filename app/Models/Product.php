@@ -16,5 +16,6 @@ class Product extends Model
         'image_path',
         'size',
         'category',
+        'gender',
     ];
 }

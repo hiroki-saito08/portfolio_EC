@@ -24,6 +24,7 @@ class ProductSeeder extends Seeder
                 'image_path' => 'Tシャツ.jpeg',
                 'size' => 'S',
                 'category' => 'test',
+                'gender' => 'mens_and_womens'
             ],
             [
                 'admin_id' => '1',
@@ -32,6 +33,7 @@ class ProductSeeder extends Seeder
                 'image_path' => 'Tシャツ.jpeg',
                 'size' => 'M',
                 'category' => 'test',
+                'gender' => 'mens_and_womens'
             ],
             [
                 'admin_id' => '1',
@@ -40,6 +42,7 @@ class ProductSeeder extends Seeder
                 'image_path' => 'Tシャツ.jpeg',
                 'size' => 'L',
                 'category' => 'test',
+                'gender' => 'mens_and_womens'
             ],
             [
                 'admin_id' => '1',
@@ -48,6 +51,7 @@ class ProductSeeder extends Seeder
                 'image_path' => 'ジャケット.jpg',
                 'size' => 'S',
                 'category' => 'test',
+                'gender' => 'mens'
             ],
             [
                 'admin_id' => '1',
@@ -56,6 +60,7 @@ class ProductSeeder extends Seeder
                 'image_path' => 'ジャケット.jpg',
                 'size' => 'M',
                 'category' => 'test',
+                'gender' => 'mens'
             ],
             [
                 'admin_id' => '1',
@@ -64,6 +69,7 @@ class ProductSeeder extends Seeder
                 'image_path' => 'ジャケット.jpg',
                 'size' => 'L',
                 'category' => 'test',
+                'gender' => 'mens'
             ],
             [
                 'admin_id' => '1',
@@ -72,6 +78,7 @@ class ProductSeeder extends Seeder
                 'image_path' => 'スキニー.jpeg',
                 'size' => 'S',
                 'category' => 'test',
+                'gender' => 'mens'
             ],
             [
                 'admin_id' => '1',
@@ -80,6 +87,7 @@ class ProductSeeder extends Seeder
                 'image_path' => 'スキニー.jpeg',
                 'size' => 'M',
                 'category' => 'test',
+                'gender' => 'mens'
             ],
             [
                 'admin_id' => '1',
@@ -88,6 +96,7 @@ class ProductSeeder extends Seeder
                 'image_path' => 'スキニー.jpeg',
                 'size' => 'L',
                 'category' => 'test',
+                'gender' => 'mens'
             ],
             [
                 'admin_id' => '1',
@@ -96,6 +105,7 @@ class ProductSeeder extends Seeder
                 'image_path' => 'チノパン.jpeg',
                 'size' => 'S',
                 'category' => 'test',
+                'gender' => 'mens_and_womens'
             ],
             [
                 'admin_id' => '1',
@@ -104,6 +114,7 @@ class ProductSeeder extends Seeder
                 'image_path' => 'チノパン.jpeg',
                 'size' => 'M',
                 'category' => 'test',
+                'gender' => 'mens_and_womens'
             ],
             [
                 'admin_id' => '1',
@@ -112,6 +123,34 @@ class ProductSeeder extends Seeder
                 'image_path' => 'チノパン.jpeg',
                 'size' => 'L',
                 'category' => 'test',
+                'gender' => 'mens_and_womens'
+            ],
+            [
+                'admin_id' => '1',
+                'name' => 'ワンピース',
+                'price' => '3000',
+                'image_path' => 'ワンピース.jpeg',
+                'size' => 'S',
+                'category' => 'test',
+                'gender' => 'womens'
+            ],
+            [
+                'admin_id' => '1',
+                'name' => 'ワンピース',
+                'price' => '3000',
+                'image_path' => 'ワンピース.jpeg',
+                'size' => 'M',
+                'category' => 'test',
+                'gender' => 'womens'
+            ],
+            [
+                'admin_id' => '1',
+                'name' => 'ワンピース',
+                'price' => '3000',
+                'image_path' => 'ワンピース.jpeg',
+                'size' => 'L',
+                'category' => 'test',
+                'gender' => 'womens'
             ],
         ]);
     }

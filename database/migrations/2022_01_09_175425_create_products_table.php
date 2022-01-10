@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('image_path');
             $table->string('size');
             $table->string('category');
+            $table->string('gender');
             $table->timestamps();
         });
     }
