@@ -35,12 +35,12 @@
         </div>
 
         <div id="searchBox">
-            <form action="search" id="searchform">
+            <form action="{{ route('user.product.search') }}" id="searchform">
               <input type="text" name="words" id="words" placeholder="キーワード検索" required>
+              <div class="form-example">
+                <button type="submit" ><img class="logo-img" type="image" src="{{ asset('images/search.png') }}"></button>
+              </div>
             </form>
-            <div class="form-example">
-              <input class="logo-img" type="image" src="{{ asset('images/search.png') }}">
-            </div>
         </div>
 
         <div id="h-r-box">

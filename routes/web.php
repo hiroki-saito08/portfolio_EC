@@ -31,10 +31,12 @@ use App\Http\Controllers\User\CartController;
 //ユーザーのトップページ
 Route::get('/', [ProductController::class, 'index'])->name('top');
 
+// 商品一覧ページ
+Route::get('products', [ProductController::class, 'products'])->name('products');
 //商品詳細ページ
 Route::get('product/{id}/show', [ProductController::class, 'show'])->name('product.show');
 //検索機能
-Route::post('search', [ProductController::class, 'search'])->name('product.search');
+Route::get('search', [ProductController::class, 'search'])->name('product.search');
 
 
 //ユーザー情報編集ページ
