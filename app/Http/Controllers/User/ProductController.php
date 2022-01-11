@@ -25,7 +25,7 @@ class ProductController extends Controller
         // MENSに表示する商品を絞る機能
         $mens_products = Product::where('gender', 'mens_and_womens')->orWhere('gender', 'mens')->get();
 
-        // TRENDING NOWに表示する商品を絞る機能
+        // KIDSに表示する商品を絞る機能
         $kids_products = Product::where('category', 'kids')->get();
 
         // TRENDING NOWに表示する商品を絞る機能
