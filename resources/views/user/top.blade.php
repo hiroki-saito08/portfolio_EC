@@ -4,7 +4,7 @@
 
 <!-- main image部分 -->
   <div id="procuct-image">
-    @foreach($products as $product)
+    @foreach($all_products as $product)
       <div id="product-name">
         <div>
           <a href="">

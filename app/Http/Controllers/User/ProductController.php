@@ -15,9 +15,23 @@ class ProductController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $products = Product::all();
-        // $keeps = Keep::where('user_id',$user_id)->get();
-        return view('user.top', compact('user', 'products'));
+
+        // 全ての商品
+        $all_products = Product::all();
+
+        // WOMENSに表示する商品を絞る機能
+        $womens_products = Product::where('gender', 'mens_and_womens')->orWhere('gender', 'womens')->get();
+
+        // MENSに表示する商品を絞る機能
+        $mens_products = Product::where('gender', 'mens_and_womens')->orWhere('gender', 'mens')->get();
+
+        // TRENDING NOWに表示する商品を絞る機能
+        $kids_products = Product::where('category', 'kids')->get();
+
+        // TRENDING NOWに表示する商品を絞る機能
+        $trending_products = Product::where('category', 'trend')->get();
+
+        return view('user.top', compact('user', 'all_products'));
     }
 
     //商品詳細ページ
