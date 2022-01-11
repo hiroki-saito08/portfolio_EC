@@ -3,6 +3,7 @@
 @section('content')
 
 <!-- main image部分 -->
+[商品一覧ページです]
   <div id="procuct-image">
     @foreach($all_products as $product)
       <div id="product-name">
@@ -30,6 +31,10 @@
   <div id="keep-name">
   </div>
   <div id="keep-price">
+</div>
+
+<div class="footer">
+  footer
 </div>
 
 @endsection
