@@ -25,6 +25,7 @@ class ProductSeeder extends Seeder
                 'size' => 'S',
                 'category' => 'test',
                 'gender' => 'mens_and_womens'
+
             ],
             [
                 'admin_id' => '1',

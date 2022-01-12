@@ -11,4 +11,15 @@ class Keep extends Model
 {
     // ソフトデリート設定
     use HasFactory, SoftDeletes;
+
+    //リレーション
+    public function product()
+    {
+        return $this->belongsTo('App\Models\Product');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }
