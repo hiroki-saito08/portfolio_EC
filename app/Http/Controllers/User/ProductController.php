@@ -31,7 +31,7 @@ class ProductController extends Controller
         // TRENDING NOWに表示する商品を絞る機能
         $trending_products = Product::where('category', 'trend')->get();
 
-        return view('user.top', compact('user', 'all_products'));
+        return view('user.top', compact('user',));
     }
 
     public function products()

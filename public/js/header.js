@@ -9,3 +9,9 @@ item.forEach(function (element) {
     element.querySelector(".sub_menu").classList.remove("open");
   },false);
 });
+
+$('.slider').slick({
+  autoplay:true,
+  autoplaySpeed:5000,
+  dots:true,
+});
