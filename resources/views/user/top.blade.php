@@ -13,18 +13,46 @@
 
 <div>
 <a href="{{ route('user.products') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">商品一覧へ</a>
+[トップページです]
+<div id=top_header>
+  <div>
+    <a href="{{ route('user.products') }}"><img src="{{ asset('/storage/'.'Tシャツ.jpeg') }}" alt="画像が登録されてません"></a>
+  </div>
+  <div>
+    <a href="{{ route('user.products') }}"><img src="{{ asset('/storage/'.'Tシャツ.jpeg') }}" alt="画像が登録されてません"></a>
+  </div>
+  <div>
+    <a href="{{ route('user.products') }}"><img src="{{ asset('/storage/'.'Tシャツ.jpeg') }}" alt="画像が登録されてません"></a>
+  </div>
 </div>
-<br>
-    <div id="">キープ表示</div>
-  <div id="keep-images">
-    <a href="">
-      <!-- 画像パス -->
-      <div>sample_img</div>
-    </a>
+<div id=top_trending>
+  <div>
+    <a href="{{ route('user.products') }}"><img src="{{ asset('/storage/'.'Tシャツ.jpeg') }}" alt="画像が登録されてません"></a>
   </div>
-  <div id="keep-name">
+  <div>
+    <a href="{{ route('user.products') }}"><img src="{{ asset('/storage/'.'Tシャツ.jpeg') }}" alt="画像が登録されてません"></a>
   </div>
-  <div id="keep-price">
+  <div>
+    <a href="{{ route('user.products') }}"><img src="{{ asset('/storage/'.'Tシャツ.jpeg') }}" alt="画像が登録されてません"></a>
+  </div>
+  <div>
+    <a href="{{ route('user.products') }}"><img src="{{ asset('/storage/'.'Tシャツ.jpeg') }}" alt="画像が登録されてません"></a>
+  </div>
+</div>
+<div class="big_image">
+    <a href="{{ route('user.products') }}"><img src="{{ asset('/storage/'.'Tシャツ.jpeg') }}" alt="画像が登録されてません"></a>
+</div>
+<div class="shop_by_category">
+  SHOP BY CATEGORY
+</div>
+<div class="big_image">
+    <a href="{{ route('user.products') }}"><img src="{{ asset('/storage/'.'Tシャツ.jpeg') }}" alt="画像が登録されてません"></a>
+</div>
+<div class="shop_by_category">
+  SHOP BY CATEGORY
+</div>
+<div class="footer">
+  footer
 </div>
 
 @endsection
