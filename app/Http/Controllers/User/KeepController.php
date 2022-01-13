@@ -20,7 +20,7 @@ class KeepController extends Controller
             ->groupBy('product_id')
             ->select('product_id')->get();
 
-        return view('products.keep', compact('user_id', 'keep_products'));
+        return view('user.keep', compact('user_id', 'keep_products'));
     }
 
     //キープに追加
@@ -30,12 +30,20 @@ class KeepController extends Controller
         $user_id = Auth::id();
         $id = $request->id;
 
+        // 重複チェック
+        $already = Keep::where('user_id', $user_id)->where('product_id', $id)->exists();
+        if ($already) {
+            return redirect()->route('user.products')
+                ->with('message', 'この商品は既にお気に入り済みです。');
+        };
+
         Keep::insert([
             'user_id' => $user_id,
             'product_id' => $id
         ]);
 
-        return redirect()->route('product.keep');
+        return redirect()->route('user.products')
+            ->with('message', '商品をお気に入りに追加しました。');
     }
 
     public function delete(Request $request, $id)

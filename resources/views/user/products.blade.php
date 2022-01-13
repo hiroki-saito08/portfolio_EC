@@ -37,10 +37,10 @@
               </form>
             </div>
             <div>
-              <form method="post" action="{{ route('user.keep.add', $product->id) }}">
-                @csrf
-                <button type="submit">お気に入りに追加</button>
-              </form>
+                <form method="post" action="{{ route('user.keep.add', $product->id) }}">
+                  @csrf
+                  <button type="submit">お気に入りに追加</button>
+                </form>
             </div>
           </div>
         </div>
