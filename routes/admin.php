@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,11 +37,22 @@ Route::get('/', function () {
 //管理者のトップページ
 Route::get('/', [ProductController::class, 'index'])->middleware(['auth:admin'])->name('top');
 
-//商品登録ページ
-Route::get('/product/create', [ProductController::class, 'create'])->middleware(['auth:admin'])->name('create');
-Route::post('/product/store', [ProductController::class, 'store'])->middleware(['auth:admin'])->name('store');
-Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->middleware(['auth:admin'])->name('edit');
-Route::post('/product/update', [ProductController::class, 'update'])->middleware(['auth:admin'])->name('update');
+//商品登録ページ表示
+Route::get('/product/create', [ProductController::class, 'create'])->middleware(['auth:admin'])->name('product.create');
+//商品登録機能
+Route::post('/product/store', [ProductController::class, 'store'])->middleware(['auth:admin'])->name('product.store');
+//商品編集ページ表示
+Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->middleware(['auth:admin'])->name('product.edit');
+//商品編集機能
+Route::post('/product/update', [ProductController::class, 'update'])->middleware(['auth:admin'])->name('product.update');
+
+
+//管理者情報編集ページ
+Route::get('{id}/edit', [AdminController::class, 'edit'])->name('edit');
+//管理者情報更新機能
+Route::post('{id}/update', [AdminController::class, 'update'])->name('update');
+
+
 
 
 // 以下はAuth.phpの内容をコピーしadmin用に編集したもの

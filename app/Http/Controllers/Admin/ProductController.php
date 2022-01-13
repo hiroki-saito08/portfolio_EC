@@ -46,8 +46,9 @@ class ProductController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:20'],
             'price' => ['required', 'integer'],
-            'size' => ['required', 'alpha', 'max:5'],
+            'size' => ['required', 'alpha'],
             'category' => ['required', 'string', 'max:20'],
+            'gender' => ['required', 'string',],
             'image_path' => ['required'],
         ]);
 
@@ -64,12 +65,13 @@ class ProductController extends Controller
             'price' => $request->price,
             'size' => $request->size,
             'category' => $request->category,
+            'gender' => $request->gender,
             'image_path' => $file_name,
         ]);
 
         // フラッシュメッセージ
         return redirect()
-            ->route('admin.create')
+            ->route('admin.product.create')
             ->with('message', '商品を登録しました。');
     }
 

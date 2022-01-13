@@ -17,7 +17,7 @@
                       <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">商品登録</h1>
                     </div>
                     <div class="lg:w-1/2 md:w-2/3 mx-auto">
-                      <form method="post" action="{{ route('admin.store')}}"  enctype="multipart/form-data">
+                      <form method="post" action="{{ route('admin.product.store')}}"  enctype="multipart/form-data">
                         @csrf
                         <div class="-m-2">
                           <div class="p-2 w-1/2 mx-auto" >
@@ -52,6 +52,16 @@
                             <div class="relative">
                               <label for="category" class="leading-7 text-sm text-gray-600">カテゴリー</label>
                               <input type="text" id="category" name="category" value="{{ old('category') }}" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                            </div>
+                          </div>
+                          <div class="p-2 w-1/2 mx-auto">
+                            <div class="relative">
+                              <label for="gender" class="leading-7 text-sm text-gray-600">性別</label>
+                              <select id="gender" name="gender" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                <option value="mens">mens</option>
+                                <option value="womens">womens</option>
+                                <option value="mens_and_womens">mens_and_womens</option>
+                              </select>
                             </div>
                           </div>
                           <div class="pt-4 flex justify-around">
