@@ -3,12 +3,21 @@
 @section('content')
 
 <!-- main image部分 -->
-<ul class="slider">
-    <li><a href="#"><img src="{{ asset('/storage/Tシャツ.jpeg') }}" alt="image01"></a></li>
-    <li><a href="#"><img src="{{ asset('/storage/Tシャツ.jpeg') }}" alt="image01"></a></li>
-    <li><a href="#"><img src="{{ asset('/storage/Tシャツ.jpeg') }}" alt="image01"></a></li>
-    <li><a href="#"><img src="{{ asset('/storage/Tシャツ.jpeg') }}" alt="image01"></a></li>
-    <li><a href="#"><img src="{{ asset('/storage/Tシャツ.jpeg') }}" alt="image01"></a></li>
+<!-- ↓スライダー本体 -->
+<ul class="thumb-item">
+     <li><a href="#"><img class="slider-img" src="{{ asset('/storage/'.'model5.jpg') }}" alt="画像が登録されてません"></a></li>
+     <li><a href="#"><img class="slider-img" src="{{ asset('/storage/'.'model2.jpg') }}" alt="画像が登録されてません"></a></li>
+     <li><a href="#"><img class="slider-img" src="{{ asset('/storage/'.'model3.jpg') }}" alt="画像が登録されてません"></a></li>
+     <li><a href="#"><img class="slider-img" src="{{ asset('/storage/'.'model4.jpg') }}" alt="画像が登録されてません"></a></li>
+     <li><a href="#"><img class="slider-img" src="{{ asset('/storage/'.'model1.jpg') }}" alt="画像が登録されてません"></a></li>
+</ul>
+<!-- ↓サムネイル -->
+<ul class="thumb-item-nav">
+     <li><a href="#"><img class="slider-img" src="{{ asset('/storage/'.'model1.jpg') }}" alt="画像が登録されてません"></a></li>
+     <li><a href="#"><img class="slider-img" src="{{ asset('/storage/'.'model2.jpg') }}" alt="画像が登録されてません"></a></li>
+     <li><a href="#"><img class="slider-img" src="{{ asset('/storage/'.'model3.jpg') }}" alt="画像が登録されてません"></a></li>
+     <li><a href="#"><img class="slider-img" src="{{ asset('/storage/'.'model4.jpg') }}" alt="画像が登録されてません"></a></li>
+     <li><a href="#"><img class="slider-img" src="{{ asset('/storage/'.'model5.jpg') }}" alt="画像が登録されてません"></a></li>
 </ul>
 
 <div>

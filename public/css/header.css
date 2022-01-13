@@ -113,6 +113,7 @@ li{
   color: #505050;
   width: 100%;
   transform: translateY(-500px);
+  z-index: 1;
 }
 
 .sub_menu a{
@@ -141,16 +142,6 @@ li{
   transform: translateY(10px);
 }
 /* ------slider---- */
-.slider{
-  margin: 100px auto;
-  width: 80%;
-}
-.slider img{
-  height: auto;
+.slider-img{
   width: 100%;
-}
-/*slick setting*/
-.slick-prev:before,
-.slick-next:before {
-  color: #000;
 }
