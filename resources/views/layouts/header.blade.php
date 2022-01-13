@@ -7,37 +7,10 @@
           </a>
         </div>
 
-        <div id="h-category">
-          <div class="h-category-margin">
-            <a href="">
-              MEN'S
-            </a>
-          </div>
-
-          <div class="h-category-margin">
-            <a href="">
-              WOMEN'S
-            </a>
-          </div>
-
-          <div class="h-category-margin">
-            <a href="">
-              KID'S
-            </a>
-          </div>
-
-          <div class="h-category-margin">
-            <a href="">
-              ALL
-            </a>
-          </div>
-
-        </div>
-
         <div id="searchBox">
             <form action="{{ route('user.product.search') }}" id="searchform">
               <input type="text" name="words" id="words" placeholder="キーワード検索" required>
-              <div class="form-example">
+              <div id="form-button">
                 <button type="submit" ><img class="logo-img" type="image" src="{{ asset('images/search.png') }}"></button>
               </div>
             </form>
@@ -59,9 +32,9 @@
 
           @auth
           <div class="h-img-right">
-            <a href="">
+            <!-- <a href="">
               <img class="logo-img" src="{{ asset('images/account02.png') }}" alt="" >
-            </a>
+            </a> -->
 
             <div class="mt-3 space-y-1">
                 <!-- Authentication -->
@@ -89,6 +62,41 @@
           @endauth
         </div>
       </div>
+    </div>
+
+    <div id="pulldown-box">
+      <nav>
+      <ul class="gnav_wrap">
+          <li class="main_menu">
+              MEN'S
+              <ul class="sub_menu">
+                 <a href="#"><li>TOPS</li></a>
+                 <a href="#"><li>PANTS</li></a>
+                 <a href="#"><li>OUTER</li></a>
+                 <a href="#"><li>OTHER</li></a>
+              </ul>
+          </li>
+          <li class="main_menu">
+              WOMEN'S
+              <ul class="sub_menu">
+                 <a href="#"><li>TOPS</li></a>
+                 <a href="#"><li>PANTS</li></a>
+                 <a href="#"><li>OUTER</li></a>
+                 <a href="#"><li>OTHER</li></a>
+              </ul>
+          </li>
+          <li class="main_menu">
+              KID'S
+              <ul class="sub_menu">
+                 <a href="#"><li>TOPS</li></a>
+                 <a href="#"><li>PANTS</li></a>
+                 <a href="#"><li>OUTER</li></a>
+                 <a href="#"><li>OTHER</li></a>
+              </ul>
+          </li>
+      </ul>
+    </nav>
+
     </div>
 
 </header>
