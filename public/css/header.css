@@ -1,3 +1,4 @@
+
 a{
   text-decoration: none;
   color: black;
@@ -112,6 +113,7 @@ li{
   color: #505050;
   width: 100%;
   transform: translateY(-500px);
+  z-index: 1;
 }
 
 .sub_menu a{
@@ -138,4 +140,8 @@ li{
 
 .sub_menu.open{
   transform: translateY(10px);
+}
+/* ------slider---- */
+.slider-img{
+  width: 100%;
 }

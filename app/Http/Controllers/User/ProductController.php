@@ -24,7 +24,7 @@ class ProductController extends Controller
         // ランダム抽出
         // $randomProduct = Product::inRandomOrder()->take($products_count)->get();
 
-        return view('user.top', compact('user', 'all_products'));
+        return view('user.top', compact('user',));
     }
 
     public function products()
