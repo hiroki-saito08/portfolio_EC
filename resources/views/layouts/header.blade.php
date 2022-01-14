@@ -30,6 +30,8 @@
               </a>
           </div>
 
+          {{-- ユーザーデータ取得 --}}
+          <?php $user = Auth::user(); ?>
           @auth
           <div class="h-img-right">
                   <a href="{{ route('user.edit', $user->id )}}">

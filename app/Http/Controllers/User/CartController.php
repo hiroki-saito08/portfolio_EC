@@ -5,8 +5,10 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
-use App\Models\Keep;
 use App\Models\Cart;
+use App\Models\User;
+use App\Models\Complete;
+
 use Auth;
 
 class CartController extends Controller
@@ -56,9 +58,15 @@ class CartController extends Controller
     {
         $user_id = Auth::id();
         $data = $request;
+
         $cart_products = Cart::where('user_id', $user_id)->get();
+
         // 合計値の設定が必要（productのprice）
-        $total_price = 0;
+        $prices = [];
+        foreach ($cart_products as $cart_product) {
+            $prices[] = $cart_product->product->price * $data["product" . $cart_product->product_id . "_count"];
+        }
+        $total_price = array_sum($prices);
 
         return view('user.check', compact('cart_products', 'data', 'total_price'));
     }
@@ -67,8 +75,29 @@ class CartController extends Controller
     public function purchase(Request $request)
     {
         $user_id = Auth::id();
+        $data = $request;
+
         $cart_products = Cart::where('user_id', $user_id)->get();
-        // 処理内容未実装
+
+        // ユニークな購入IDとしてユーザーID＋日付を設定
+        $purchase_group = $user_id . date(now());
+
+        // 購入処理
+        foreach ($cart_products as $cart_product) {
+            $product_id = $data["product" . $cart_product->product_id . "_id"];
+            $size = $data["product" . $cart_product->product_id . "_size"];
+            $count = $data["product" . $cart_product->product_id . "_count"];
+
+            Complete::insert([
+                'user_id' => $user_id,
+                'product_id' => $product_id,
+                'size' => $size,
+                'count' => $count,
+                'purchase_group' => $purchase_group
+            ]);
+        }
+        // 購入が終わったらカートの中身をデリート（ソフトデリート）
+        Cart::where('user_id', $user_id)->delete();
 
         return redirect()->route('user.cart.completed');
     }
