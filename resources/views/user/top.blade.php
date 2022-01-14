@@ -23,6 +23,14 @@
 <div>
 <a href="{{ route('user.products') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">商品一覧へ</a>
 [トップページです]
+
+  {{-- フラッシュメッセージ --}}
+  @if(session('message'))
+  <div class="p-6">
+  {{ session('message') }}
+  </div>
+  @endif
+
 <div id=top_header>
   <div>
     <a href="{{ route('user.products') }}"><img src="{{ asset('/storage/'.'Tシャツ.jpeg') }}" alt="画像が登録されてません"></a>
