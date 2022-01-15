@@ -1,3 +1,7 @@
+.click_pop{
+  cursor: pointer;
+}
+
 .pop_area{
   display: none;
   width: 100%;
