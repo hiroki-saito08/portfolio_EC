@@ -30,20 +30,19 @@ class KeepController extends Controller
         $user_id = Auth::id();
         $id = $request->id;
 
-        // 重複チェック
-        $already = Keep::where('user_id', $user_id)->where('product_id', $id)->exists();
+        // 既にソフトデリートされたものがあれば復活処理
+        $already = Keep::onlyTrashed()->where('user_id', $user_id)->where('product_id', $id)->exists();
+
         if ($already) {
-            return redirect()->route('user.products')
-                ->with('message', 'この商品は既にお気に入り済みです。');
-        };
+            Keep::onlyTrashed()->where('user_id', $user_id)->where('product_id', $id)->restore();
+        } else {
+            Keep::insert([
+                'user_id' => $user_id,
+                'product_id' => $id
+            ]);
+        }
 
-        Keep::insert([
-            'user_id' => $user_id,
-            'product_id' => $id
-        ]);
-
-        return redirect()->route('user.products')
-            ->with('message', '商品をお気に入りに追加しました。');
+        return redirect()->route('user.products');
     }
 
     public function delete(Request $request, $id)
@@ -52,6 +51,6 @@ class KeepController extends Controller
 
         Keep::where('user_id', $user_id)->where('product_id', $id)->delete();
 
-        return back();
+        return redirect()->route('user.products');
     }
 }

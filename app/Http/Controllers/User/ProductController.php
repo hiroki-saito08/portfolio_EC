@@ -50,11 +50,11 @@ class ProductController extends Controller
     }
 
     //商品詳細ページ
-    public function show($id)
-    {
-        $product = Product::find($id);
-        return view('user.products', compact('products'));
-    }
+    // public function show($id)
+    // {
+    //     $product = Product::find($id);
+    //     return view('user.products', compact('products'));
+    // }
 
     //検索機能
     public function search(Request $request)
