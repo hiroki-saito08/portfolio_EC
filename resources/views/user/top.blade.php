@@ -33,14 +33,20 @@
   </div>
   @endif
 
+<div id="main_bar"></div>
+
 <div id=top_header>
-  <div>
-    <a href="{{ route('user.products') }}"><img src="{{ asset('/storage/'.'Tシャツ.jpeg') }}" alt="画像が登録されてません"></a>
+  <div id="top_img_box">
+    <a href="{{ route('user.products') }}"><img class="top_main_img" src="{{ asset('/storage/'.'onepiece3.jpg') }}" alt="画像が登録されてません"></a>
   </div>
-  <div>
-    <a href="{{ route('user.products') }}"><img src="{{ asset('/storage/'.'Tシャツ.jpeg') }}" alt="画像が登録されてません"></a>
+
+  <div id="main_bar"></div>
+
+  <div id="top_img_box">
+    <a href="{{ route('user.products') }}"><img class="top_main_img" src="{{ asset('/storage/'.'T2.jpg') }}" alt="画像が登録されてません"></a>
   </div>
-  <div>
+
+  <!-- <div>
     <a href="{{ route('user.products') }}"><img src="{{ asset('/storage/'.'Tシャツ.jpeg') }}" alt="画像が登録されてません"></a>
   </div>
 </div>
@@ -60,9 +66,11 @@
 </div>
 <div class="big_image">
     <a href="{{ route('user.products') }}"><img src="{{ asset('/storage/'.'Tシャツ.jpeg') }}" alt="画像が登録されてません"></a>
-</div>
+</div> -->
+
 <div class="shop_by_category">
-  SHOP BY CATEGORY
+  <h1>SHOP BY CATEGORY</h1>
+
 </div>
 <div class="big_image">
     <a href="{{ route('user.products') }}"><img src="{{ asset('/storage/'.'Tシャツ.jpeg') }}" alt="画像が登録されてません"></a>

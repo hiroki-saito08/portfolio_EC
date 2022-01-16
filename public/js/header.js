@@ -23,6 +23,8 @@ $(function() {
        infinite: true,
        slidesToShow: 4,
        slidesToScroll: 1,
+       autoplay:true,
+       autoplaySpeed:2000,
        asNavFor: '.thumb-item', //スライダー本体のクラス名
        focusOnSelect: true,
   });
