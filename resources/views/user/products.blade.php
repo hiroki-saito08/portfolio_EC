@@ -50,20 +50,26 @@
               <div class="pop_bottom">
 
                     {{-- 重複チェック --}}
-                    <?php $already = \DB::table('keeps')->where('user_id', $user->id)->where('product_id', $product->id)->whereNull('deleted_at')->exists();?>
                     @auth
-                    @if ($already)
-                    <form method="post" action="{{ route('user.keep.delete', $product->id) }}">
-                      @csrf
-                      <button type="submit">お気に入り済み</button>
-                    </form>
-                    @endauth
+                      <?php $already = \DB::table('keeps')->where('user_id', $user->id)->where('product_id', $product->id)->whereNull('deleted_at')->exists();?>
+                      @if ($already)
+                        <form method="post" action="{{ route('user.keep.delete', $product->id) }}">
+                          @csrf
+                          <button type="submit">お気に入り済み</button>
+                        </form>
                       @else
-                    <form method="post" action="{{ route('user.keep.add', $product->id) }}">
-                      @csrf
-                      <button type="submit">お気に入りに追加</button>
-                    </form>
-                    @endif
+                        <form method="post" action="{{ route('user.keep.add', $product->id) }}">
+                          @csrf
+                          <button type="submit">お気に入りに追加</button>
+                        </form>
+                      @endif
+                    @endauth
+                    @guest
+                      <form method="post" action="{{ route('user.login') }}">
+                        @csrf
+                        <button type="submit">お気に入りに追加</button>
+                      </form>
+                    @endguest
               </div>
             </div>
           </div>
