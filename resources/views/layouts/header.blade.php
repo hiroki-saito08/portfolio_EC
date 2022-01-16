@@ -19,13 +19,13 @@
         <div id="h-r-box">
           <div id="header-right">
             <div class="h-img-right">
-              <a href="">
-                <img class="logo-img" src="{{ asset('images/home.png') }}" alt="" >
+              <a href="{{ route('user.cart') }}">
+                <img class="logo-img" src="{{ asset('images/carts.png') }}" alt="" >
               </a>
             </div>
 
           <div class="h-img-right">
-              <a href="">
+              <a href="{{ route('user.keep') }}">
                 <img class="logo-img" src="{{ asset('images/hart.png') }}" alt="" >
               </a>
           </div>
@@ -35,7 +35,7 @@
           @auth
           <div class="h-img-right">
                   <a href="{{ route('user.edit', $user->id )}}">
-                    アカウント
+                    <img class="logo-img" src="{{ asset('images/acount.png') }}" alt="" >
                   </a>
           </div>
           <div class="h-img-right">
