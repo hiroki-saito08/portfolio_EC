@@ -33,10 +33,10 @@ header{
 }
 
 #searchBox{
-  height: 30px;
+  height: 31px;
   margin-top: 25px;
   display: flex;
-  margin-left: auto;
+  margin-left: 588px;
 }
 
 #searchform{
