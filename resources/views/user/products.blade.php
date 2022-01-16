@@ -28,7 +28,7 @@
         <div class="pop_area" id="{{$product->id}}">
           <div class="pop_top">
             <div>
-              <img src="{{ asset('/storage/'.$product -> image_path) }}" alt="画像が登録されてません">
+              <img src="{{ asset('/storage/'.$product -> image_path) }}" alt="画像が登録されてません" class="pop_img">
             </div>
             <div class="pop_products">
               <div class="pop_product"> 商品名： {{ $product -> name }}</div>
@@ -50,12 +50,14 @@
               <div class="pop_bottom">
 
                     {{-- 重複チェック --}}
-                   <?php $already = \DB::table('keeps')->where('user_id', $user->id)->where('product_id', $product->id)->whereNull('deleted_at')->exists();?>
+                    @auth
                     @if ($already)
                     <form method="post" action="{{ route('user.keep.delete', $product->id) }}">
-                    @csrf
-                    <button type="submit">お気に入り済み</button>
+                      @csrf
+                      <button type="submit">お気に入り済み</button>
+                      <?php $already = \DB::table('keeps')->where('user_id', $user->id)->where('product_id', $product->id)->whereNull('deleted_at')->exists();?>
                     </form>
+                    @endauth
                       @else
                     <form method="post" action="{{ route('user.keep.add', $product->id) }}">
                       @csrf
