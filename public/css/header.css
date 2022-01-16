@@ -143,5 +143,24 @@ li{
 }
 /* ------slider---- */
 .slider-img{
+  height: 300px;
   width: 100%;
+  object-fit: cover;
+}
+
+.slider-main{
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+}
+
+#slider-box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.slick-next:before {
+  color: gray;
 }
