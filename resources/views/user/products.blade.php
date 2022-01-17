@@ -16,7 +16,6 @@
     @foreach($all_products as $product)
       <div id="product_contents">
         <div>
-            <!-- 画像パス -->
             <a><img data-target="{{$product->id}}" class="click_pop" src="{{ asset('/storage/'.$product -> image_path) }}" alt="画像が登録されてません"></a>
         </div>
         <div> 商品名： {{ $product -> name }}</div>
