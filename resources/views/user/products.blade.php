@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- main image部分 -->
-[商品一覧ページです]
+{{-- [商品一覧ページです] --}}
 
   {{-- フラッシュメッセージ --}}
   @if(session('message'))
