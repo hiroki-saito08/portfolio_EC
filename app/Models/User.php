@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Keep;
+use Auth;
 
 class User extends Authenticatable
 {
@@ -41,4 +43,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //リレーション
+    public function carts()
+    {
+        return $this->hasMany('App\Models\Cart');
+    }
+
+    public function completes()
+    {
+        return $this->hasMany('App\Models\Complete');
+    }
+
+    public function keeps()
+    {
+        return $this->hasMany('App\Models\Keep');
+    }
 }

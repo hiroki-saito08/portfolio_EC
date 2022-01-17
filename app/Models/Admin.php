@@ -40,4 +40,10 @@ class Admin extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //リレーション
+    public function products()
+    {
+        return $this->hasMany('App\Models\Product');
+    }
 }

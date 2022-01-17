@@ -18,4 +18,20 @@ class Product extends Model
         'category',
         'gender',
     ];
+
+    //リレーション
+    public function carts()
+    {
+        return $this->hasMany('App\Models\Cart');
+    }
+
+    public function keeps()
+    {
+        return $this->hasMany('App\Models\Keep');
+    }
+
+    public function admin()
+    {
+        return $this->belongsTo('App\Models\Admin');
+    }
 }

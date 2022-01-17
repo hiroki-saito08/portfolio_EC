@@ -19,19 +19,12 @@ class ProductController extends Controller
         // 全ての商品
         $all_products = Product::all();
 
-        // WOMENSに表示する商品を絞る機能
-        $womens_products = Product::where('gender', 'mens_and_womens')->orWhere('gender', 'womens')->get();
+        // 商品数
+        // $products_count = Product::count();
+        // ランダム抽出
+        // $randomProduct = Product::inRandomOrder()->take($products_count)->get();
 
-        // MENSに表示する商品を絞る機能
-        $mens_products = Product::where('gender', 'mens_and_womens')->orWhere('gender', 'mens')->get();
-
-        // KIDSに表示する商品を絞る機能
-        $kids_products = Product::where('category', 'kids')->get();
-
-        // TRENDING NOWに表示する商品を絞る機能
-        $trending_products = Product::where('category', 'trend')->get();
-
-        return view('user.top', compact('user', 'all_products'));
+        return view('user.top', compact('user',));
     }
 
     public function products()
@@ -57,11 +50,11 @@ class ProductController extends Controller
     }
 
     //商品詳細ページ
-    public function show($id)
-    {
-        $product = Product::find($id);
-        return view('user.products', compact('products'));
-    }
+    // public function show($id)
+    // {
+    //     $product = Product::find($id);
+    //     return view('user.products', compact('products'));
+    // }
 
     //検索機能
     public function search(Request $request)

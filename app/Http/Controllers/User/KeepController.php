@@ -20,7 +20,7 @@ class KeepController extends Controller
             ->groupBy('product_id')
             ->select('product_id')->get();
 
-        return view('products.keep', compact('user_id', 'keep_products'));
+        return view('user.keep', compact('user_id', 'keep_products'));
     }
 
     //キープに追加
@@ -30,12 +30,19 @@ class KeepController extends Controller
         $user_id = Auth::id();
         $id = $request->id;
 
-        Keep::insert([
-            'user_id' => $user_id,
-            'product_id' => $id
-        ]);
+        // 既にソフトデリートされたものがあれば復活処理
+        $already = Keep::onlyTrashed()->where('user_id', $user_id)->where('product_id', $id)->exists();
 
-        return redirect()->route('product.keep');
+        if ($already) {
+            Keep::onlyTrashed()->where('user_id', $user_id)->where('product_id', $id)->restore();
+        } else {
+            Keep::insert([
+                'user_id' => $user_id,
+                'product_id' => $id
+            ]);
+        }
+
+        return redirect()->route('user.products');
     }
 
     public function delete(Request $request, $id)
@@ -44,6 +51,6 @@ class KeepController extends Controller
 
         Keep::where('user_id', $user_id)->where('product_id', $id)->delete();
 
-        return back();
+        return redirect()->route('user.products');
     }
 }

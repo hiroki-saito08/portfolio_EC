@@ -40,33 +40,33 @@ Route::get('search', [ProductController::class, 'search'])->name('product.search
 
 
 //ユーザー情報編集ページ
-Route::get('{id}/edit', [UserController::class, 'edit'])->name('edit');
+Route::get('{id}/edit', [UserController::class, 'edit'])->middleware(['auth:users'])->name('edit');
 // ユーザー情報更新機能
-Route::post('{id}/update', [UserController::class, 'update'])->name('update');
+Route::post('{id}/update', [UserController::class, 'update'])->middleware(['auth:users'])->name('update');
 
 
 //キープページ
-Route::get('keep', [KeepController::class, 'index'])->name('keep');
+Route::get('keep', [KeepController::class, 'index'])->middleware(['auth:users'])->name('keep');
 //キープに追加
-Route::post('keep/{id}/add', [KeepController::class, 'add'])->name('keep.add');
+Route::post('keep/{id}/add', [KeepController::class, 'add'])->middleware(['auth:users'])->name('keep.add');
 // キープから削除
-Route::post('keep/{id}/delete', [KeepController::class, 'delete'])->name('keep.delete');
+Route::post('keep/{id}/delete', [KeepController::class, 'delete'])->middleware(['auth:users'])->name('keep.delete');
 
 
 //カートページ
-Route::get('cart', [CartController::class, 'index'])->name('cart');
+Route::get('cart', [CartController::class, 'index'])->middleware(['auth:users'])->name('cart');
 //カートに追加
-Route::post('cart/{id}/add', [CartController::class, 'add'])->name('cart.add');
+Route::post('cart/{id}/add', [CartController::class, 'add'])->middleware(['auth:users'])->name('cart.add');
 //カートから削除
-Route::post('cart/{id}/delete', [CartController::class, 'delete'])->name('cart.delete');
+Route::post('cart/{id}/delete', [CartController::class, 'delete'])->middleware(['auth:users'])->name('cart.delete');
 //購入確認画面
-Route::post('Check', [CartController::class, 'Check'])->name('cart.check');
+Route::post('check', [CartController::class, 'check'])->middleware(['auth:users'])->name('cart.check');
 //商品購入処理
-Route::post('cart/{id}/purchase', [CartController::class, 'purchase'])->name('cart.purchase');
+Route::post('cart/purchase', [CartController::class, 'purchase'])->middleware(['auth:users'])->name('cart.purchase');
 //購入完了ページ
-Route::get('complete', [CartController::class, 'complete'])->name('cart.complete');
+Route::get('completed', [CartController::class, 'completed'])->middleware(['auth:users'])->name('cart.completed');
 //商品購入履歴ページ
-Route::get('history', [CartController::class, 'history'])->name('cart.history');
+Route::get('history', [CartController::class, 'history'])->middleware(['auth:users'])->name('cart.history');
 
 
 require __DIR__ . '/auth.php';

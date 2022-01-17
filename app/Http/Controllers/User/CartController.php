@@ -5,8 +5,10 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
-use App\Models\Keep;
 use App\Models\Cart;
+use App\Models\User;
+use App\Models\Complete;
+
 use Auth;
 
 class CartController extends Controller
@@ -16,25 +18,28 @@ class CartController extends Controller
     {
         $user_id = Auth::id();
 
-        $cart_products = Cart::where('user_id', $user_id)
-            ->groupBy('product_id')
-            // プロダクトIDの重複を削除
-            ->select('product_id')->get();
+        $cart_products = Cart::where('user_id', $user_id)->get();
 
-        return view('products.cart', ['cart_products' => $cart_products]);
+        return view('user.cart', compact('cart_products'));
     }
 
     //カートに追加
-    public function add(Request $request)
+    public function add(Request $request, $id)
     {
         $user_id = Auth::id();
-        $id = $request->id;
+
+        // 重複チェック
+        $already = Cart::where('user_id', $user_id)->where('product_id', $id)->exists();
+        if ($already) {
+            return redirect()->route('user.cart');
+        };
 
         Cart::insert([
             'user_id' => $user_id,
             'product_id' => $id
         ]);
-        return redirect()->route('product.cart');
+        return redirect()->route('user.products')
+            ->with('message', '商品をカートに追加しました。');
     }
 
     //カート内削除機能
@@ -51,29 +56,56 @@ class CartController extends Controller
     // 購入確認画面
     public function check(Request $request)
     {
-        $user = Auth::user();
+        $user_id = Auth::id();
         $data = $request;
-        $cart_products = Cart::where('user_id', $user)
-            ->groupBy('product_id')
-            // プロダクトIDの重複を削除
-            ->select('product_id')->get();
 
-        return view('products.check', ['cart_products' => $cart_products, 'data' => $data]);
+        $cart_products = Cart::where('user_id', $user_id)->get();
+
+        // 合計値の設定が必要（productのprice）
+        $prices = [];
+        foreach ($cart_products as $cart_product) {
+            $prices[] = $cart_product->product->price * $data["product" . $cart_product->product_id . "_count"];
+        }
+        $total_price = array_sum($prices);
+
+        return view('user.check', compact('cart_products', 'data', 'total_price'));
     }
 
     //購入履歴に追加
     public function purchase(Request $request)
     {
         $user_id = Auth::id();
+        $data = $request;
+
         $cart_products = Cart::where('user_id', $user_id)->get();
 
-        return redirect()->route('user.top');
+        // ユニークな購入IDとしてユーザーID＋日付を設定
+        $purchase_group = $user_id . date(now());
+
+        // 購入処理
+        foreach ($cart_products as $cart_product) {
+            $product_id = $data["product" . $cart_product->product_id . "_id"];
+            $size = $data["product" . $cart_product->product_id . "_size"];
+            $count = $data["product" . $cart_product->product_id . "_count"];
+
+            Complete::insert([
+                'user_id' => $user_id,
+                'product_id' => $product_id,
+                'size' => $size,
+                'count' => $count,
+                'purchase_group' => $purchase_group
+            ]);
+        }
+        // 購入が終わったらカートの中身をデリート（ソフトデリート）
+        Cart::where('user_id', $user_id)->delete();
+
+        return redirect()->route('user.cart.completed');
     }
 
-    //購入完了ページ
-    public function complete()
+    //商品購入完了ページ
+    public function completed()
     {
-        return view('user.top');
+        return view('user.completed');
     }
 
     //商品購入履歴ページ
