@@ -25,8 +25,8 @@
 <!-- </div> -->
 
 <!-- <div> -->
-<a href="{{ route('user.products') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">商品一覧へ</a>
-[トップページです]
+{{-- <a href="{{ route('user.products') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">商品一覧へ</a> --}}
+{{-- [トップページです] --}}
 
   {{-- フラッシュメッセージ --}}
   @if(session('message'))
