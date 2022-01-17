@@ -50,6 +50,7 @@ class ProductController extends Controller
             'category' => ['required', 'string', 'max:20'],
             'gender' => ['required', 'string',],
             'image_path' => ['required'],
+            'etc' => [],
         ]);
 
         //画像保存処理
@@ -67,6 +68,7 @@ class ProductController extends Controller
             'category' => $request->category,
             'gender' => $request->gender,
             'image_path' => $file_name,
+            'etc' => $request->etc,
         ]);
 
         // フラッシュメッセージ
