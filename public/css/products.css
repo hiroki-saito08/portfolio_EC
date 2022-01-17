@@ -49,10 +49,39 @@
 .pop_bottom{
   margin-left: 30px;
 }
+/* ------slider---- */
+
+.slider-img{
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.slider-main{
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+}
+
+#slider-box{
+  margin: 0 auto;
+  width: 90%;
+}
+
+.slick-next:before {
+  color: gray;
+}
+
 /* ---------main */
+#main-box{
+  width: 100%;
+}
+
 #top_img_box{
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
+  width: 90%;
+  margin: 0 auto;
 }
 
 .top_main_img {
