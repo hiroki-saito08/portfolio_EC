@@ -10,6 +10,12 @@ item.forEach(function (element) {
   },false);
 });
 
+$(function () {
+  $('.js-btn').on('click', function () {        // js-btnクラスをクリックすると、
+    $('.gnav_wrap , .btn-line ,.btn').toggleClass('open'); // メニューとバーガーの線にopenクラスをつけ外しする
+  })
+});
+
 $(function() {
   $('.thumb-item').slick({
        infinite: true,

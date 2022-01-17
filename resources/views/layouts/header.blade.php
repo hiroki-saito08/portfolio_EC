@@ -112,7 +112,10 @@
           </li>
       </ul>
     </nav>
+   </div>
 
-    </div>
+   <button type="button" class="btn js-btn">
+    <span class="btn-line"></span>
+   </button>
 
 </header>

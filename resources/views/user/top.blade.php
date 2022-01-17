@@ -71,7 +71,7 @@
 
   <div id="big_image">
     <a href="{{ route('user.products') }}">
-      <img src="{{ asset('/storage/'.'jacket1.jpg') }}" alt="画像が登録されてません">
+      <img class="top_main_img" src="{{ asset('/storage/'.'jacket1.jpg') }}" alt="画像が登録されてません">
     </a>
   </div>
 
