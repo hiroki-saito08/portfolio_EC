@@ -65,28 +65,16 @@
       </div>
     </div>
     <div id="buy-button-pare">
-      <button type="" id="buy-button">ご購入のお手続き</button>
+      <form id="purchase_id" method="post" action="{{ route('user.cart.check') }}">
+        @csrf
+        <button type="submit" id="buy-button">ご購入のお手続き</button>
+      </form>
     </div>
   </div>
-</div>
-
-
-
-
-<div>
-  <form id="purchase_id" method="post" action="{{ route('user.cart.check') }}">
-    @csrf
-    <input type="submit" value="最終確認へ">
-  </form>
 </div>
 
 @else
 カートに商品がありません。
 @endif
-
-<br>
-<br>
-<br>
-<br>
 
 @endsection

@@ -2,11 +2,9 @@
 
 @section('content')
 
-
-
 @foreach ($cart_products as $cart_product)
 
-  <div>
+  <div id="check-main-box">
     <form method="post" action="{{ route('user.cart.purchase') }}">
       @csrf
 
