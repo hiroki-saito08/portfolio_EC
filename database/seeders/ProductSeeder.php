@@ -17,142 +17,152 @@ class ProductSeeder extends Seeder
     {
         //
         Product::insert([
+            // KIDs
             [
                 'admin_id' => '1',
-                'name' => 'シャツ',
-                'price' => '1000',
-                'image_path' => 'Tシャツ.jpeg',
+                'name' => 'caps',
+                'price' => '2000',
+                'image_path' => 'kids/cap.jpg',
                 'size' => 'S',
-                'category' => 'test',
-                'gender' => 'mens_and_womens'
+                'category' => 'other',
+                'gender' => 'kids',
+                'etc' => ''
+            ],
+            [
+                'admin_id' => '1',
+                'name' => 'caps',
+                'price' => '2000',
+                'image_path' => 'kids/hat.jpg',
+                'size' => 'S',
+                'category' => 'other',
+                'gender' => 'kids',
+                'etc' => ''
+            ],
 
-            ],
+            // KIDs_TOPs
             [
                 'admin_id' => '1',
-                'name' => 'シャツ',
-                'price' => '1000',
-                'image_path' => 'Tシャツ.jpeg',
-                'size' => 'M',
-                'category' => 'test',
-                'gender' => 'mens_and_womens'
-            ],
-            [
-                'admin_id' => '1',
-                'name' => 'シャツ',
-                'price' => '1000',
-                'image_path' => 'Tシャツ.jpeg',
-                'size' => 'L',
-                'category' => 'test',
-                'gender' => 'mens_and_womens'
-            ],
-            [
-                'admin_id' => '1',
-                'name' => 'ジャケット',
-                'price' => '9800',
-                'image_path' => 'ジャケット.jpg',
+                'name' => 'tops',
+                'price' => '3000',
+                'image_path' => 'kids/tops.jpg',
                 'size' => 'S',
-                'category' => 'test',
-                'gender' => 'mens'
+                'category' => 'tops',
+                'gender' => 'kids',
+                'etc' => ''
             ],
             [
                 'admin_id' => '1',
-                'name' => 'ジャケット',
-                'price' => '9800',
-                'image_path' => 'ジャケット.jpg',
-                'size' => 'M',
-                'category' => 'test',
-                'gender' => 'mens'
-            ],
-            [
-                'admin_id' => '1',
-                'name' => 'ジャケット',
-                'price' => '9800',
-                'image_path' => 'ジャケット.jpg',
-                'size' => 'L',
-                'category' => 'test',
-                'gender' => 'mens'
-            ],
-            [
-                'admin_id' => '1',
-                'name' => 'スキニーパンツ',
+                'name' => 'tops',
                 'price' => '3000',
-                'image_path' => 'スキニー.jpeg',
+                'image_path' => 'kids/tops2.jpeg',
                 'size' => 'S',
-                'category' => 'test',
-                'gender' => 'mens'
+                'category' => 'tops',
+                'gender' => 'kids',
+                'etc' => ''
             ],
             [
                 'admin_id' => '1',
-                'name' => 'スキニーパンツ',
+                'name' => 'tops',
                 'price' => '3000',
-                'image_path' => 'スキニー.jpeg',
-                'size' => 'M',
-                'category' => 'test',
-                'gender' => 'mens'
-            ],
-            [
-                'admin_id' => '1',
-                'name' => 'スキニーパンツ',
-                'price' => '3000',
-                'image_path' => 'スキニー.jpeg',
-                'size' => 'L',
-                'category' => 'test',
-                'gender' => 'mens'
-            ],
-            [
-                'admin_id' => '1',
-                'name' => 'チノパン',
-                'price' => '3000',
-                'image_path' => 'チノパン.jpeg',
+                'image_path' => 'kids/tops3.jpg',
                 'size' => 'S',
-                'category' => 'test',
-                'gender' => 'mens_and_womens'
+                'category' => 'tops',
+                'gender' => 'kids',
+                'etc' => ''
             ],
             [
                 'admin_id' => '1',
-                'name' => 'チノパン',
+                'name' => 'tops',
                 'price' => '3000',
-                'image_path' => 'チノパン.jpeg',
-                'size' => 'M',
-                'category' => 'test',
-                'gender' => 'mens_and_womens'
-            ],
-            [
-                'admin_id' => '1',
-                'name' => 'チノパン',
-                'price' => '3000',
-                'image_path' => 'チノパン.jpeg',
-                'size' => 'L',
-                'category' => 'test',
-                'gender' => 'mens_and_womens'
-            ],
-            [
-                'admin_id' => '1',
-                'name' => 'ワンピース',
-                'price' => '3000',
-                'image_path' => 'ワンピース.jpeg',
+                'image_path' => 'kids/tops4.jpeg',
                 'size' => 'S',
-                'category' => 'test',
-                'gender' => 'womens'
+                'category' => 'tops',
+                'gender' => 'kids',
+                'etc' => ''
             ],
             [
                 'admin_id' => '1',
-                'name' => 'ワンピース',
+                'name' => 'tops',
                 'price' => '3000',
-                'image_path' => 'ワンピース.jpeg',
+                'image_path' => 'kids/tops5.jpg',
+                'size' => 'S',
+                'category' => 'tops',
+                'gender' => 'kids',
+                'etc' => ''
+            ],
+            [
+                'admin_id' => '1',
+                'name' => 'tops',
+                'price' => '3000',
+                'image_path' => 'kids/tops6.jpg',
+                'size' => 'S',
+                'category' => 'tops',
+                'gender' => 'kids',
+                'etc' => ''
+            ],
+            // MENs
+            [
+                'admin_id' => '1',
+                'name' => 'tops',
+                'price' => '3000',
+                'image_path' => 'mens/tops1.jpg',
                 'size' => 'M',
-                'category' => 'test',
-                'gender' => 'womens'
+                'category' => 'tops',
+                'gender' => 'mens',
+                'etc' => ''
             ],
+            // WOMEN
             [
                 'admin_id' => '1',
-                'name' => 'ワンピース',
+                'name' => 'tops',
                 'price' => '3000',
-                'image_path' => 'ワンピース.jpeg',
-                'size' => 'L',
-                'category' => 'test',
-                'gender' => 'womens'
+                'image_path' => 'women/tops1.jpg',
+                'size' => 'M',
+                'category' => 'tops',
+                'gender' => 'women',
+                'etc' => ''
             ],
         ]);
     }
 }
+
+// 写真
+// gahag-0016191343-1.jpg
+// jacket1.jpg
+// jacket2.jpg
+// jacket3.jpg
+// others.jpg
+// others2.jpg
+// shoes.jpg
+// shoes2.jpg
+// tops1.jpeg
+// tops2.jpg
+// tops3.jpg
+// tops4.jpg
+// tops5.jpeg
+// tops6.jpg
+// tops7.jpg
+// tops8.jpg
+// tops9.jpg
+
+
+// WOMENs
+
+// bag1.jpg
+// grasses.jpg
+// jacket2.jpg
+// jacket3.jpg
+// jacket4.jpg
+// model6.jpg
+// model8.jpg
+// model9.jpg
+// onepiece4.jpg
+// onepiece5.jpg
+// onepiece6.jpg
+// outer1.jpg
+// pants.jpg
+// setup1.jpg
+// tops1.jpg
+// tops2.jpg
+// tops3.jpeg
+// tops4.jpg
