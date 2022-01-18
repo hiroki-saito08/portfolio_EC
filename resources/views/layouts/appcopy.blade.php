@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="{{ asset('css/header.css') }}">
   <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
   <link rel="stylesheet" href="{{ asset('css/top.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/cart.css') }}">
   <link rel="stylesheet" href="{{ asset('css/products.css') }}">
   <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
   <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
