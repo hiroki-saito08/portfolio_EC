@@ -94,20 +94,5 @@
     @endforeach
   </div>
 
-    <div id="">キープ表示</div>
-  <div id="keep-images">
-    <a href="">
-      <!-- 画像パス -->
-      <div>sample_img</div>
-    </a>
-  </div>
-  <div id="keep-name">
-  </div>
-  <div id="keep-price">
-</div>
-
-<div class="footer">
-  footer
-</div>
 
 @endsection
