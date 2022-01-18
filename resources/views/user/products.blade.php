@@ -38,54 +38,58 @@
 
         {{-- ここをモーダルで表示する --}}
         <div class="pop_area" id="{{$product->id}}">
-          <div class="pop_top">
-            <div>
-              <img src="{{ asset('/storage/'.$product -> image_path) }}" alt="画像が登録されてません" class="pop_img">
-            </div>
-            <div class="pop_products">
-              <div class="pop_product"> 商品名： {{ $product -> name }}</div>
-              <div class="pop_product"> 値段： {{ $product -> price }}</div>
-              <div class="pop_product"> サイズ： {{ $product -> size }}</div>
-            </div>
-          </div>
-          <div class="pop_buttons">
-            <div class="pop_body">
-              <a href="{{ route('user.products') }}">戻る</a>
-            </div>
-            <div class="pop_bottoms">
-              <div class="pop_bottom">
-                <form method="post" action="{{ route('user.cart.add', $product->id) }}">
-                  @csrf
-                  <button type="submit">カートに追加</button>
-                </form>
+            <div id="modal_pop_area">
+            <div class="pop_top">
+              <div>
+                <img src="{{ asset('/storage/'.$product -> image_path) }}" alt="画像が登録されてません" class="pop_img">
               </div>
-              <div class="pop_bottom">
+            </div>
 
-                    {{-- 重複チェック --}}
-                    @auth
-                      <?php $already = \DB::table('keeps')->where('user_id', $user->id)->where('product_id', $product->id)->whereNull('deleted_at')->exists();?>
-                      @if ($already)
-                        <form method="post" action="{{ route('user.keep.delete', $product->id) }}">
-                          @csrf
-                          <button type="submit">お気に入り済み</button>
-                        </form>
-                      @else
-                        <form method="post" action="{{ route('user.keep.add', $product->id) }}">
-                          @csrf
-                          <button type="submit">お気に入りに追加</button>
-                        </form>
-                      @endif
-                    @endauth
-                    @guest
-                      <form method="post" action="{{ route('user.login') }}">
-                        @csrf
-                        <button type="submit">お気に入りに追加</button>
-                      </form>
-                    @endguest
+            <div id="pop_area_bottom">
+              <div class="pop_products">
+                <div class="pop_product"> 商品名： {{ $product -> name }}</div>
+                <div class="pop_product"> 値段： {{ $product -> price }}</div>
+                <div class="pop_product"> サイズ： {{ $product -> size }}</div>
+              </div>
+              <div class="pop_buttons">
+                <div class="pop_bottoms">
+                  <div class="pop_bottom">
+                    <form method="post" action="{{ route('user.cart.add', $product->id) }}">
+                      @csrf
+                      <button type="submit" id="add-carts">カートに追加</button>
+                      <!-- <img src="{{ asset('/storage/carts.png') }}" alt="" class=""> -->
+                    </form>
+                  </div>
+                  <div class="pop_bottom">
+
+                        {{-- 重複チェック --}}
+                        @auth
+                          <?php $already = \DB::table('keeps')->where('user_id', $user->id)->where('product_id', $product->id)->whereNull('deleted_at')->exists();?>
+                          @if ($already)
+                            <form method="post" action="{{ route('user.keep.delete', $product->id) }}">
+                              @csrf
+                              <button type="submit" id="add-carts">お気に入り済み</button>
+                            </form>
+                          @else
+                            <form method="post" action="{{ route('user.keep.add', $product->id) }}">
+                              @csrf
+                              <button type="submit" id="add-carts">お気に入りに追加</button>
+                            </form>
+                          @endif
+                        @endauth
+                        @guest
+                          <form method="post" action="{{ route('user.login') }}">
+                            @csrf
+                            <button type="submit" id="add-carts">お気に入りに追加</button>
+                          </form>
+                        @endguest
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     @endforeach
   </div>
