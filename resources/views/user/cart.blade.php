@@ -38,7 +38,7 @@
             <form method="post" action="{{ route('user.cart.delete',['id' => $cart_product->product_id]) }}">
               @csrf
               <!-- <input type="submit" value="削除" onclick="return confirm('削除してもよろしいでしょうか？')"> -->
-              <button type="submit" id="add-carts" onclick="return confirm('削除してもよろしいでしょうか？')">
+              <button type="submit" id="cart-add-carts" onclick="return confirm('削除してもよろしいでしょうか？')">
                 削除
               </button>
             </form>

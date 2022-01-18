@@ -47,9 +47,9 @@
 
             <div id="pop_area_bottom">
               <div class="pop_products">
-                <div class="pop_product"> 商品名： {{ $product -> name }}</div>
-                <div class="pop_product"> 値段： {{ $product -> price }}</div>
-                <div class="pop_product"> サイズ： {{ $product -> size }}</div>
+                <div class="pop_product">商品名&nbsp;:&nbsp;{{ $product -> name }}</div>
+                <div class="pop_product">値段&nbsp;:&nbsp;¥{{ $product -> price }}</div>
+                <div class="pop_product">サイズ&nbsp;:&nbsp;{{ $product -> size }}</div>
               </div>
               <div class="pop_buttons">
                 <div class="pop_bottoms">

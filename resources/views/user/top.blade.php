@@ -40,7 +40,7 @@
 <div id="main-box">
   <div id="top_img_box">
     <a href="{{ route('user.products') }}">
-      <img class="top_main_img" src="{{ asset('/storage/'.'onepiece3.jpg') }}" alt="画像が登録されてません">
+      <img class="top_main_img1" src="{{ asset('/storage/'.'model8.jpg') }}" alt="画像が登録されてません">
     </a>
   </div>
 
