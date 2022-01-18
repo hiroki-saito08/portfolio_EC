@@ -64,6 +64,7 @@
         </div>
       </div>
     </div>
+    
     <div id="buy-button-pare">
       <form id="purchase_id" method="post" action="{{ route('user.cart.check') }}">
         @csrf
