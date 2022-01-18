@@ -12,15 +12,28 @@
   </div>
   @endif
 
-  <div id="procucts_contents">
+  <div id="products_box">
     @foreach($all_products as $product)
-      <div id="product_contents">
-        <div>
-            <a><img data-target="{{$product->id}}" class="click_pop" src="{{ asset('/storage/'.$product -> image_path) }}" alt="画像が登録されてません"></a>
+      <div class="product_contents">
+        <a>
+          <img data-target="{{$product->id}}" class="click_pop" src="{{ asset('/storage/'.$product -> image_path) }}" alt="画像が登録されてません">
+        </a>
+
+        <div class="products-name">
+          <p>
+            商品名： {{ $product -> name }}
+          </p>
         </div>
-        <div> 商品名： {{ $product -> name }}</div>
-        <div> 値段： {{ $product -> price }}</div>
-        <div> サイズ： {{ $product -> size }}</div>
+        <div class="products-name">
+          <p>
+            値段：¥ {{ $product -> price }}
+          </p>
+        </div>
+        <div class="products-name">
+          <p>
+            サイズ： {{ $product -> size }}
+          </p>
+        </div>
 
 
         {{-- ここをモーダルで表示する --}}
