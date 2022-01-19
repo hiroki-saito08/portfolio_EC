@@ -1,0 +1,135 @@
+#check-top-box{
+  width: 50%;
+  height: 150px;
+  background-color: #e5e5e5;
+  margin: 30px auto;
+  border: 1px solid;
+}
+
+#check-h1{
+  text-align: center;
+  padding: 20px;
+  font-size: 40px;
+  font-weight: 100;
+}
+
+#check-box-up{
+  width: 100%;
+  height: 42px;
+  background-color: #282828;
+}
+
+#check-box-up p{
+  color: aliceblue;
+  text-align: center;
+  padding: 10px;
+}
+
+#check-box-bottom{
+  width: 100%;
+  height: 110px;
+}
+
+#check-box-bottom p{
+  margin: 10px;
+}
+
+.check-card{
+  width: 100px;
+  background-color: blueviolet;
+}
+
+#check-main-box{
+  display: flex;
+}
+
+.check-img{
+  width: 50%;
+  height: 40vh;
+  object-fit: cover;
+}
+
+#check-main-left{
+  width: 50%;
+  margin: 20px;
+  border: 1px solid;
+  padding: 23px;
+
+}
+
+#check-cart-total{
+  width: 30%;
+  margin: 20px auto;
+  border: 1px solid;
+  padding: 23px;
+}
+
+.check-img-box{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.check-img-right{
+  margin: 20px;
+}
+
+.check-value{
+  margin: 20px 0;
+}
+
+#buy-button-confirm{
+  margin-left: 25%;
+  margin-bottom: 30px;
+  width: 50%;
+  height: 42px;
+  border-radius: 50px;
+  background-color: black;
+  color: #efefef;
+}
+
+#buy-button-confirm:hover{
+  margin-left: 25%;
+  margin-bottom: 30px;
+  width: 50%;
+  height: 42px;
+  border-radius: 50px;
+  background-color: #424242;
+  color: #efefef;
+}
+
+#buy-confirm{
+  width: 100%;
+}
+
+ /* --------レスポンシブ */
+
+@media screen and (max-width: 674px) {
+  #check-main-box {
+    display: block;
+  }
+
+  #check-main-left {
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid;
+    padding: 23px;
+  }
+
+  .check-img-box {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .check-img {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+  }
+
+  #check-cart-total {
+    width: 50%;
+    margin: 20px auto;
+    border: 1px solid;
+    padding: 23px;
+  }
+}
