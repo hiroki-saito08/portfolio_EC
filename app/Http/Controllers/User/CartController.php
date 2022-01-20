@@ -21,6 +21,7 @@ class CartController extends Controller
         $cart_products = Cart::where('user_id', $user_id)->get();
 
         return view('user.cart', compact('cart_products'));
+        // return response()->json([$cart_products->product->price]);
     }
 
     //カートに追加
