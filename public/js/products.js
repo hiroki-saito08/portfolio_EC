@@ -13,14 +13,14 @@ $(function () {
   });
 });
 
-// ------カート計算
-let value= document.getElementById('select-value');
-let object = document.getElementById('object');
+// // ------カート計算
+// let value= document.getElementById('select-value');
+// let object = document.getElementById('object');
 
-// object.innerHTML = currentTarget.value;
+// // object.innerHTML = currentTarget.value;
 
-function inputChange(){
-  console.log(event.currentTarget.value);
-  object.innerHTML = event.currentTarget.value;
-}
-value.addEventListener('change', inputChange);
+// function inputChange(){
+//   console.log(event.currentTarget.value);
+//   object.innerHTML = event.currentTarget.value;
+// }
+// value.addEventListener('change', inputChange);
