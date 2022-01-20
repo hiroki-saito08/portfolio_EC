@@ -1,0 +1,29 @@
+#complete-box{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+    height: 100vh;
+    background-color: #c3c3c3;
+}
+
+#comp-p-box{
+  margin-top: 50px;
+}
+
+#return-button{
+  margin: 30px auto;
+  width: 90%;
+  height: 42px;
+  border-radius: 50px;
+  background-color: black;
+  color: #efefef;
+}
+
+#return-button:hover{
+  margin: 30px auto;
+  width: 90%;
+  height: 42px;
+  border-radius: 50px;
+  background-color: #464646;
+  color: #efefef;
+}

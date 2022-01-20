@@ -16,10 +16,10 @@
 
         <div id="cart-value">
           <h1>{{ $cart_product->product->name }}</h1>
-          <h1>¥{{ $cart_product->product->price }}</h1>
+          <h1 id="pp">¥{{ $cart_product->product->price }}</h1>
           <!-- 個数の変更機能 -->
-          <select name="product{{ $cart_product->product_id }}_count" form="purchase_id">
-            <option selected value="1">1</option>
+          <select name="product{{ $cart_product->product_id }}_count" form="purchase_id" id="select-value">
+            <option id="addvalue"  value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
@@ -53,9 +53,14 @@
     <div id="cart-total">
       <h1>ご注文金額</h1>
       <div id="total-box">
+      @foreach ($cart_products as $cart_product)
         <div class="total-box-chil">
           <p>小計</p><p>¥</p>
         </div>
+        <div class="total-box-chil">
+          <p>個数×</p><p id="object"></p><p>個</p>
+        </div>
+      @endforeach
         <div class="total-box-chil">
           <p>配送手数料</p><p>¥0</p>
         </div>
@@ -64,7 +69,7 @@
         </div>
       </div>
     </div>
-    
+
     <div id="buy-button-pare">
       <form id="purchase_id" method="post" action="{{ route('user.cart.check') }}">
         @csrf
@@ -75,7 +80,9 @@
 </div>
 
 @else
-カートに商品がありません。
+<div id="cart-noinside">
+  <h1>カートに商品がありません。</h1>
+</div>
 @endif
 
 @endsection

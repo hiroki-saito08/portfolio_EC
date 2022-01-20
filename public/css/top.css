@@ -1,3 +1,7 @@
+main{
+  min-height: 76vh;
+}
+
 #modal_pop_area{
   width: 50%;
   height: 87vh;

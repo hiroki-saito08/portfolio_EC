@@ -37,6 +37,19 @@
 
 <div id="main_bar"></div>
 
+<div class="shop_category_box">
+    <div id="category_font_box">
+      <h1 id="category_font">COLLECTION</h1>
+    </div>
+
+    <div id="category_font_box">
+      <p id="category_font_p">We must develop and maintain the capacity to forgive. He who is devoid of the power to forgive is devoid of the power to love. There is some good in the worst of us and some evil in the best of us. When we discover this, we are less prone to hate our enemies.We must develop and maintain the capacity to forgive. He who is devoid of the power to forgive is devoid of the power to love. There is some good in the worst of us and some evil in the best of us. When we discover this, we are less prone to hate our enemies.We must develop and maintain the capacity to forgive. He who is devoid of the power to forgive is devoid of the power to love. There is some good in the worst of us and some evil in the best of us. When we discover this, we are less prone to hate our enemies.
+      </p>
+    </div>
+  </div>
+
+<div id="main_bar"></div>
+
 <div id="main-box">
   <div id="top_img_box">
     <a href="{{ route('user.products') }}">
@@ -58,7 +71,7 @@
 <div class="shop_by_category">
   <div class="shop_category_box">
     <div id="category_font_box">
-      <h1 id="category_font">CATEGORY</h1>
+      <h1 id="category_font">CAMPAIGN</h1>
     </div>
 
     <div id="category_font_box">

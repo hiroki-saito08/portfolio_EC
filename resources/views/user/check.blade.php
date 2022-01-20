@@ -58,7 +58,7 @@
             </div>
 
             <!-- 個数×値段 -->
-            <div class="check-value">=¥{{ $cart_product->product->price * $data["product".$cart_product->product_id."_count"]}}</div>
+            <div class="check-value">¥{{ $cart_product->product->price * $data["product".$cart_product->product_id."_count"]}}</div>
           </div>
         </div>
 
