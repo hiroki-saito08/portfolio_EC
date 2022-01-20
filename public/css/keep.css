@@ -1,0 +1,75 @@
+#main{
+
+  margin: 0 20px;
+}
+#main h1{
+  font-size: 30px;
+  font-weight: 100;
+  margin: 20px;
+}
+
+.keep-main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.keep-img{
+  margin: 20px;
+  width: 90%;
+  height: 40vh;
+  object-fit: contain;
+}
+
+.keep-img-box{
+  width: 30%;
+}
+
+.keep-button{
+  margin: 4px;
+  width: 100px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: #efefef;
+  color: #282828;
+}
+
+.keep-button:hover{
+  margin: 4px;
+  width: 100px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: #404040;
+  color: #f7f7f7;
+}
+
+.keep-praice-box{
+
+}
+
+.keep-praice-box p{
+  margin: 10px;
+}
+
+.keep-form-box{
+  display: flex;
+}
+
+@media screen and (max-width: 674px) {
+  .keep-img-box {
+    width: 100%;
+  }
+
+  .keep-main {
+    display: block;
+  }
+
+  .keep-img {
+    margin: 20px;
+    /* width: 90%; */
+    height: 50vh;
+    object-fit: contain;
+  }
+
+
+}

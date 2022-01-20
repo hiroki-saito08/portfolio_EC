@@ -1,3 +1,9 @@
+#cart-noinside h1{
+  font-size: 30px;
+  font-weight: 100;
+  margin: 20px;
+}
+
 #cart-parent{
   display: flex;
   justify-content: space-between;
