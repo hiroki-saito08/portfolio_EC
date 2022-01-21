@@ -1,0 +1,35 @@
+#contents{
+
+  min-height: 79vh;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-color: #c5c5c5;
+
+}
+
+#contents-box{
+  margin-top: 50px;
+}
+
+.relative{
+  margin: 20px;
+}
+
+#redirect-button{
+  margin: 10px;
+  width: 90%;
+  height: 42px;
+  border-radius: 50px;
+  background-color: black;
+  color: #efefef;
+}
+
+#redirect-button:hover{
+  margin: 10px;
+  width: 90%;
+  height: 42px;
+  border-radius: 50px;
+  background-color: #4a4a4a;
+  color: #efefef;
+}

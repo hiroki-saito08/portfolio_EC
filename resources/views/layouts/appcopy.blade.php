@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="{{ asset('css/keep.css') }}">
   <link rel="stylesheet" href="{{ asset('css/check.css') }}">
   <link rel="stylesheet" href="{{ asset('css/products.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
   <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
   <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
