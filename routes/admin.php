@@ -44,7 +44,9 @@ Route::post('/product/store', [ProductController::class, 'store'])->middleware([
 //商品編集ページ表示
 Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->middleware(['auth:admin'])->name('product.edit');
 //商品編集機能
-Route::post('/product/update', [ProductController::class, 'update'])->middleware(['auth:admin'])->name('product.update');
+Route::post('/product/{id}/update', [ProductController::class, 'update'])->middleware(['auth:admin'])->name('product.update');
+// 商品削除機能
+Route::post('/product/{id}/delete', [ProductController::class, 'destroy'])->middleware(['auth:admin'])->name('product.delete');
 
 
 //管理者情報編集ページ

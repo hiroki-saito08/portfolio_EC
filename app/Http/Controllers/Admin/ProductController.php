@@ -98,7 +98,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::where('id', $id)->first();
+        //商品編集ページ
+        return view('admin.products_edit', compact('product'));
     }
 
     /**
@@ -110,7 +112,45 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $admin = Auth::user();
+        $admin_id = $admin->id;
+        $product = Product::find($id);
+
+        //バリデーション
+        $request->validate([
+            'name' => ['required', 'string', 'max:20'],
+            'price' => ['required', 'integer'],
+            'size' => ['required', 'alpha'],
+            'category' => ['required', 'string', 'max:20'],
+            'gender' => ['required', 'string',]
+        ]);
+
+        //画像保存処理
+        // 拡張子を含めたファイル名を取得
+        if (!empty($request->image_path)) {
+            $OriginalName = $request->file('image_path')->getClientOriginalName();
+            // ファイルの前に性別をつける
+            $file_name = $request->gender . '/' . $OriginalName;
+            //ファイルを保存
+            $request->file("image_path")->storeAs("public", $file_name);
+        } else {
+            $file_name = $product->image_path;
+        }
+
+        //商品更新処理
+        $product->admin_id = $admin_id;
+        $product->name = $request->name;
+        $product->size = $request->size;
+        $product->category = $request->category;
+        $product->gender = $request->gender;
+        $product->image_path = $file_name;
+        $product->etc = $request->etc;
+        $product->save();
+
+        // フラッシュメッセージ
+        return redirect()
+            ->route('admin.product.edit', compact('id'))
+            ->with('message', '商品を更新しました。');
     }
 
     /**
@@ -119,8 +159,17 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        //商品を削除
+        $product_id = $id;
+
+        Product::where('id', $product_id)->delete();
+
+
+        // フラッシュメッセージ
+        return redirect()
+            ->route('admin.top')
+            ->with('message', '商品を削除しました。');
     }
 }

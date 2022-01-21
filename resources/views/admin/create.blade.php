@@ -34,7 +34,7 @@
                           </div>
                           <div class="p-2 w-1/2 mx-auto">
                             <div class="relative">
-                              <label for="image_path" class="leading-7 text-sm text-gray-600">画像パス</label>
+                              <label for="image_path" class="leading-7 text-sm text-gray-600">画像</label>
                               <input type="file" id="image_path" name="image_path" value="{{ old('image_path') }}" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                             </div>
                           </div>
@@ -64,9 +64,9 @@
                               <label for="gender" class="leading-7 text-sm text-gray-600">性別</label>
                               <select id="gender" name="gender" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                 <option value="mens">mens</option>
-                                <option value="womens">women</option>
+                                <option value="women">women</option>
                                 <option value="mens_and_womens">mens_and_women</option>
-                                <option value="womens">kids</option>
+                                <option value="kids">kids</option>
                               </select>
                             </div>
                           </div>
