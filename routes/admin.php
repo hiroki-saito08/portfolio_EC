@@ -56,12 +56,14 @@ Route::post('{id}/update', [AdminController::class, 'update'])->name('update');
 
 
 // 以下はAuth.phpの内容をコピーしadmin用に編集したもの
+
+// ここの内容をログインしてる時のみ新規ユーザーを作成できるように書き換え
 Route::get('/register', [RegisteredUserController::class, 'create'])
-  ->middleware('guest')
+  ->middleware('auth:admin')
   ->name('register');
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
-  ->middleware('guest');
+  ->middleware('auth:admin');
 
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])
   ->middleware('guest')

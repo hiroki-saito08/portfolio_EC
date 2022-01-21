@@ -56,6 +56,5 @@
                 </x-button>
             </div>
         </form>
-        <a href="{{ route('admin.register') }}" class="ml-4 text-lg text-gray-700 dark:text-gray-500 underline">新規作成する</a>
     </x-auth-card>
 </x-guest-layout>
