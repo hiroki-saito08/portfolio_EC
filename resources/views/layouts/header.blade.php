@@ -18,17 +18,19 @@
 
         <div id="h-r-box">
           <div id="header-right">
-            <div class="h-img-right">
-              <a href="{{ route('user.cart') }}">
-                <img class="logo-img" src="{{ asset('images/carts.png') }}" alt="" >
-              </a>
-            </div>
+            <div id="cart-favorite">
+              <div class="h-img-right">
+                <a href="{{ route('user.cart') }}">
+                  <img class="logo-img" src="{{ asset('images/carts.png') }}" alt="" >
+                </a>
+              </div>
 
-          <div class="h-img-right">
-              <a href="{{ route('user.keep') }}">
-                <img class="logo-img" src="{{ asset('images/hart.png') }}" alt="" >
-              </a>
-          </div>
+              <div class="h-img-right">
+                  <a href="{{ route('user.keep') }}">
+                    <img class="logo-img" src="{{ asset('images/hart.png') }}" alt="" >
+                  </a>
+              </div>
+            </div>
 
           {{-- ユーザーデータ取得 --}}
           <?php $user = Auth::user(); ?>
