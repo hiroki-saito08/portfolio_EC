@@ -21,9 +21,8 @@
             <button type="submit" class="keep-button">カートに追加</button>
           </form>
 
-          <form method="POST" action="{{ route('user.cart.delete', $keep_product->product->id)}}">
+          <form method="POST" action="{{ route('user.keep.delete', $keep_product->product->id) }}">
             @csrf
-            <!-- <input type="submit" value="削除" onclick="return confirm('削除してもよろしいでしょうか？')"> -->
             <button type="submit" class="keep-button" onclick="return confirm('削除してもよろしいでしょうか？')">削除</button>
           </form>
         </div>
