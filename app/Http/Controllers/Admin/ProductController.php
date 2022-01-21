@@ -55,7 +55,9 @@ class ProductController extends Controller
 
         //画像保存処理
         // 拡張子を含めたファイル名を取得
-        $file_name = $request->file('image_path')->getClientOriginalName();
+        $OriginalName = $request->file('image_path')->getClientOriginalName();
+        // ファイルの前に性別をつける
+        $file_name = $request->gender . '/' . $OriginalName;
         //ファイルを保存
         $request->file("image_path")->storeAs("public", $file_name);
 

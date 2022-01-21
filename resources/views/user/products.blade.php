@@ -11,7 +11,6 @@
   {{ session('message') }}
   </div>
   @endif
-
   <div id="products_box">
     @foreach($all_products as $product)
       <div class="product_contents">
