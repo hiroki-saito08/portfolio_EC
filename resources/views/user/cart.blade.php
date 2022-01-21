@@ -23,11 +23,11 @@
 
         <div id="cart-value">
           <h1>{{ $cart_product->product->name }}</h1>
-          <h1 id="pp">¥{{ $cart_product->product->price }}</h1>
+          <h1>¥{{ $cart_product->product->price }}</h1>
 
           <!-- 個数の変更機能 -->
           <select name="product{{ $cart_product->product_id }}_count" form="purchase_id" id="{{ $cart_product->product_id }}">
-            <option id="addvalue"  value="1">1</option>
+            <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
@@ -35,30 +35,33 @@
           </select>
 
           <script>
+            // 商品IDでデータを拾う
             target = {{ $cart_product->product_id }};
 
-            // 料金を連想配列に格納していく
+            // IDで識別できるように連想配列に格納していく
               price = {{ $cart_product->product->price }};
               array_price[target] = price;
 
-            // 繰り返しの数だけ1を入れていく、この時識別できるようにKeyをつける
+            // 繰り返しの数だけ1を入れていく
               array_count[target] = 1;
 
             // セレクトボックスの値を拾う
             function inputCange() {
-              // 定義し直さないと最後しか拾えない
+              console.log("個数に変更がありました。")
+              // ここで定義し直さないと繰り返しの最後の値しか拾えない
               target = {{ $cart_product->product_id }};
               // 変更があったら再度連想配列に格納していく
               array_count[target] = document.getElementById(target).value;
+              // 最後にデータ計算の関数を呼び出し
+              total_price_checker();
             }
             // 呼び出しのトリガー
             text = document.getElementById(target);
             text.onchange = inputCange;
           </script>
 
-
           <!-- サイズの選択機能 -->
-          <select name="product{{ $cart_product->product_id }}_size" form="purchase_id">
+          <select name="product{{ $cart_product->product_id }}_size" form="purchase_id" >
             <option selected value="{{ $cart_product->product->size }}">{{ $cart_product->product->size }}</option>
             <option value="S">S</option>
             <option value="M">M</option>
@@ -85,50 +88,59 @@
       <h1>ご注文金額</h1>
       <div id="total-box">
         <div class="total-box-chil">
-          <p>小計</p><p id="small_price">¥</p>
+          <p>小計</p><p>¥<span id="small_price"></span></p>
         </div>
         <div class="total-box-chil">
           <p>配送手数料</p><p>¥0</p>
         </div>
         <div class="total-box-chil">
-          <p>合計</p><p id="total_price">¥</p>
+          <p>合計</p><p>¥<span id="total_price"></span></p>
         </div>
       </div>
     </div>
+
     <script>
       // 格納したデータを取り出す
-      // total_prices=[];
-      // for (key in array_price){
-      //   total_prices.push(array_price[key]);
-      // }
-      // total_counts=[];
-      // for (key in array_count){
-      //   total_counts.push(array_count[key]);
-      // }
-      // console.log(array_price)
-      // let length = Object.keys(array_price).length;
+      // 関数に格納して呼び出し可能にする
+      function total_price_checker() {
+        console.log(array_price)
+        console.log(array_count)
 
-      // const sumArray = array => {
-      //   let sum = 0;
-      //   for (let i = 0, len = array.length; i < len; i++) {
-      //     sum += array[i];
-      //   }
-      //   return sum;
-      // };
+        array_price_data=[]
+        array_count_data=[]
+        total_prices=[];
 
-      // 連想配列のデータをそれぞれ掛け合わせたい
-      // Keyは同じだからその値を掛け合わせたいてもう一度格納
-      // その中の合計値を出せたら小計が出せる、、、
+        // 料金データを取り出す
+        for (key in array_price){
+          array_price_data.push(array_price[key]);
+        }
+        // 個数データを取り出す
+        for (key in array_count){
+          array_count_data.push(array_count[key]);
+        }
+        // 同じKeyのためインデックスごとに掛け合わせる
+        for (let i = 0; i < array_price_data.length; i++) {
+          total_prices.push(array_price_data[i]*array_count_data[i])
+        }
+        console.log(total_prices)
 
-      // let price_sum = sumArray(total_prices);
-      // let count_sum = sumArray(total_counts);
+        // 配列の中を集計する型
+        const sumArray = array => {
+          let sum = 0;
+          for (let i = 0, len = array.length; i < len; i++) {
+            sum += array[i];
+          }
+          return sum;
+        };
 
-      // console.log(price_sum);
-      // console.log(count_sum);
-
-      // let small_price = price_sum * count_sum;
-      // console.log(small_price);
-      // document.getElementById("small_price").innerHTML=small_price;
+        // 送料（仮に0円で設定）
+        let send = 0;
+        let price_sum = sumArray(total_prices);
+        let total_price_sum = price_sum + send;
+        document.getElementById("small_price").innerHTML=price_sum;
+        document.getElementById("total_price").innerHTML=total_price_sum;
+      }
+      total_price_checker()
     </script>
 
     <div id="buy-button-pare">

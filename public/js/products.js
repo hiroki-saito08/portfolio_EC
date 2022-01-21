@@ -12,15 +12,3 @@ $(function () {
     $('.pop_area').css('display', 'none');
   });
 });
-
-// // ------カート計算
-// let value= document.getElementById('select-value');
-// let object = document.getElementById('object');
-
-// // object.innerHTML = currentTarget.value;
-
-// function inputChange(){
-//   console.log(event.currentTarget.value);
-//   object.innerHTML = event.currentTarget.value;
-// }
-// value.addEventListener('change', inputChange);
