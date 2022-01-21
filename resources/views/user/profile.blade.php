@@ -29,6 +29,19 @@
                 <input type="email" id="email" name="email" value="{{ $user->email }}" required class="">
               </div>
             </div>
+<<<<<<< HEAD
+          </div>
+          <div class="">
+            <div class="relative">
+              <label for="address" class="">住所を登録する</label>
+              <input type="text" id="address" name="address" value="{{ $user->address }}" class="">
+            </div>
+          </div>
+          <div class="">
+            <div class="relative">
+              <label for="password" class="">パスワード</label>
+              <input type="password" id="password" name="password" required class="">
+=======
             <div class="">
               <div class="relative">
                 <label for="password" class="">パスワード</label>
@@ -40,6 +53,7 @@
                 <label for="password_confirmation" class="">パスワード確認</label>
                 <input type="password" id="password_confirmation" name="password_confirmation" required class="">
               </div>
+>>>>>>> origin/season2_feature/#2_products
             </div>
           </div>
 

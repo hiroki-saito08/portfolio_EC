@@ -77,39 +77,39 @@
           <li class="main_menu">
               MEN'S
               <ul class="sub_menu">
-                 <a href="#"><li>TOPS</li></a>
-                 <a href="#"><li>PANTS</li></a>
-                 <a href="#"><li>OUTER</li></a>
-                 <a href="#"><li>OTHER</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'tops']) }}"><li>TOPS</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'pants']) }}"><li>PANTS</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'outer']) }}"><li>OUTER</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'other']) }}"><li>OTHER</li></a>
               </ul>
           </li>
 
           <li class="main_menu">
               WOMEN'S
               <ul class="sub_menu">
-                 <a href="#"><li>TOPS</li></a>
-                 <a href="#"><li>PANTS</li></a>
-                 <a href="#"><li>OUTER</li></a>
-                 <a href="#"><li>OTHER</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'tops']) }}"><li>TOPS</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'pants']) }}"><li>PANTS</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'outer']) }}"><li>OUTER</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'other']) }}"><li>OTHER</li></a>
               </ul>
           </li>
 
           <li class="main_menu">
               KID'S
               <ul class="sub_menu">
-                 <a href="#"><li>TOPS</li></a>
-                 <a href="#"><li>PANTS</li></a>
-                 <a href="#"><li>OUTER</li></a>
-                 <a href="#"><li>OTHER</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'tops']) }}"><li>TOPS</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'pants']) }}"><li>PANTS</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'outer']) }}"><li>OUTER</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'other']) }}"><li>OTHER</li></a>
               </ul>
           </li>
 
           <li class="main_menu">
               OTHER'S
               <ul class="sub_menu">
-                 <a href="#"><li>TOPS</li></a>
-                 <a href="#"><li>PANTS</li></a>
-                 <a href="#"><li>OUTER</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'tops']) }}"><li>TOPS</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'pants']) }}"><li>PANTS</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'outer']) }}"><li>OUTER</li></a>
               </ul>
           </li>
       </ul>

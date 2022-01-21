@@ -62,7 +62,27 @@ class ProductController extends Controller
         $user = Auth::user();
         $words = $request->input('words');
         $all_products = Product::where('name', 'like', '%' . $words . '%')->get();
-        // $keeps = Keep::where('user_id', $user->id)->get();
+
+        // 中身がなかったらメッセージ表示
+        if ($all_products->count() == 0) {
+            return redirect()->route('user.products')
+                ->with('message', '該当の商品がありません');
+        }
+
+        return view('user.products', compact('all_products', 'user'));
+    }
+    //aタグからの検索機能
+    public function a_search($category)
+    {
+        $user = Auth::user();
+        $words = $category;
+        $all_products = Product::where('category', 'like', '%' . $words . '%')->get();
+
+        // 中身がなかったらメッセージ表示
+        if ($all_products->count() == 0) {
+            return redirect()->route('user.products')
+                ->with('message', '該当の商品がありません');
+        }
 
         return view('user.products', compact('all_products', 'user'));
     }
