@@ -8,9 +8,15 @@
     <p>1.お届け先情報</p>
   </div>
   <div id="check-box-bottom">
-    <p>配送先住所</p>
-    <p>配送方法</p>
-    <p>配送予定日</p>
+    <p>配送先住所：{{ $user->address }}</p>
+    <p>配送方法：
+      <select name="">
+        <option value="">郵送</option>
+        <option value="">店舗受け取り</option>
+        <option value="">置き配を利用する</option>
+      </select>
+    </p>
+    <p>配送予定日：<input type="date" name=""></p>
   </div>
 </div>
 

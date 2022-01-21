@@ -30,6 +30,12 @@
           </div>
           <div class="">
             <div class="relative">
+              <label for="address" class="">住所を登録する</label>
+              <input type="text" id="address" name="address" value="{{ $user->address }}" class="">
+            </div>
+          </div>
+          <div class="">
+            <div class="relative">
               <label for="password" class="">パスワード</label>
               <input type="password" id="password" name="password" required class="">
             </div>

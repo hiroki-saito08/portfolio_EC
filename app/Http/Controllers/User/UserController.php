@@ -51,6 +51,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
+        $user->address = $request->address;
         $user->save();
 
         return redirect()
