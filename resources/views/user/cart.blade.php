@@ -67,6 +67,7 @@
             <option value="M">M</option>
             <option value="L">L</option>
           </select>
+        </form>
 
           <div id="cart-delete">
             <form method="post" action="{{ route('user.cart.delete',['id' => $cart_product->product_id]) }}">
@@ -77,9 +78,9 @@
               </button>
             </form>
           </div>
+
         </div>
       </div>
-    </form>
     @endforeach
   </div>
 
