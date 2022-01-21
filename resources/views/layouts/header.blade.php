@@ -3,7 +3,7 @@
     <div id="headerBox">
         <div id="top-logo">
           <a href="/">
-            <img src="{{ asset('images/new_logo.jpg') }}" alt="" width="100px" height="50px">
+            <img id="logo-size" src="{{ asset('images/logo.png') }}" alt="logo">
           </a>
         </div>
 
