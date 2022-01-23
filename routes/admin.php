@@ -44,7 +44,9 @@ Route::post('/product/store', [ProductController::class, 'store'])->middleware([
 //商品編集ページ表示
 Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->middleware(['auth:admin'])->name('product.edit');
 //商品編集機能
-Route::post('/product/update', [ProductController::class, 'update'])->middleware(['auth:admin'])->name('product.update');
+Route::post('/product/{id}/update', [ProductController::class, 'update'])->middleware(['auth:admin'])->name('product.update');
+// 商品削除機能
+Route::post('/product/{id}/delete', [ProductController::class, 'destroy'])->middleware(['auth:admin'])->name('product.delete');
 
 
 //管理者情報編集ページ
@@ -56,12 +58,14 @@ Route::post('{id}/update', [AdminController::class, 'update'])->name('update');
 
 
 // 以下はAuth.phpの内容をコピーしadmin用に編集したもの
+
+// ここの内容をログインしてる時のみ新規ユーザーを作成できるように書き換え
 Route::get('/register', [RegisteredUserController::class, 'create'])
-  ->middleware('guest')
+  ->middleware('auth:admin')
   ->name('register');
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
-  ->middleware('guest');
+  ->middleware('auth:admin');
 
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])
   ->middleware('guest')

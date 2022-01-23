@@ -51,6 +51,6 @@ class KeepController extends Controller
 
         Keep::where('user_id', $user_id)->where('product_id', $id)->delete();
 
-        return redirect()->route('user.products');
+        return back();
     }
 }

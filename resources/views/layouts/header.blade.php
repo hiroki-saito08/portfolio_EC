@@ -3,7 +3,7 @@
     <div id="headerBox">
         <div id="top-logo">
           <a href="/">
-            <img src="{{ asset('images/new_logo.jpg') }}" alt="" width="100px" height="50px">
+            <img id="logo-size" src="{{ asset('images/logo.png') }}" alt="logo">
           </a>
         </div>
 
@@ -18,17 +18,19 @@
 
         <div id="h-r-box">
           <div id="header-right">
-            <div class="h-img-right">
-              <a href="{{ route('user.cart') }}">
-                <img class="logo-img" src="{{ asset('images/carts.png') }}" alt="" >
-              </a>
-            </div>
+            <div id="cart-favorite">
+              <div class="h-img-right">
+                <a href="{{ route('user.cart') }}">
+                  <img class="logo-img" src="{{ asset('images/carts.png') }}" alt="" >
+                </a>
+              </div>
 
-          <div class="h-img-right">
-              <a href="{{ route('user.keep') }}">
-                <img class="logo-img" src="{{ asset('images/hart.png') }}" alt="" >
-              </a>
-          </div>
+              <div class="h-img-right">
+                  <a href="{{ route('user.keep') }}">
+                    <img class="logo-img" src="{{ asset('images/hart.png') }}" alt="" >
+                  </a>
+              </div>
+            </div>
 
           {{-- ユーザーデータ取得 --}}
           <?php $user = Auth::user(); ?>
@@ -75,39 +77,39 @@
           <li class="main_menu">
               MEN'S
               <ul class="sub_menu">
-                 <a href="#"><li>TOPS</li></a>
-                 <a href="#"><li>PANTS</li></a>
-                 <a href="#"><li>OUTER</li></a>
-                 <a href="#"><li>OTHER</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'tops']) }}"><li>TOPS</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'pants']) }}"><li>PANTS</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'outer']) }}"><li>OUTER</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'other']) }}"><li>OTHER</li></a>
               </ul>
           </li>
 
           <li class="main_menu">
               WOMEN'S
               <ul class="sub_menu">
-                 <a href="#"><li>TOPS</li></a>
-                 <a href="#"><li>PANTS</li></a>
-                 <a href="#"><li>OUTER</li></a>
-                 <a href="#"><li>OTHER</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'tops']) }}"><li>TOPS</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'pants']) }}"><li>PANTS</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'outer']) }}"><li>OUTER</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'other']) }}"><li>OTHER</li></a>
               </ul>
           </li>
 
           <li class="main_menu">
               KID'S
               <ul class="sub_menu">
-                 <a href="#"><li>TOPS</li></a>
-                 <a href="#"><li>PANTS</li></a>
-                 <a href="#"><li>OUTER</li></a>
-                 <a href="#"><li>OTHER</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'tops']) }}"><li>TOPS</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'pants']) }}"><li>PANTS</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'outer']) }}"><li>OUTER</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'other']) }}"><li>OTHER</li></a>
               </ul>
           </li>
 
           <li class="main_menu">
               OTHER'S
               <ul class="sub_menu">
-                 <a href="#"><li>TOPS</li></a>
-                 <a href="#"><li>PANTS</li></a>
-                 <a href="#"><li>OUTER</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'tops']) }}"><li>TOPS</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'pants']) }}"><li>PANTS</li></a>
+                 <a href="{{ route('user.product.a_search',['category' => 'outer']) }}"><li>OUTER</li></a>
               </ul>
           </li>
       </ul>
