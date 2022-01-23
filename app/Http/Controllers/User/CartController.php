@@ -56,6 +56,7 @@ class CartController extends Controller
     // 購入確認画面
     public function check(Request $request)
     {
+        $user = Auth::user();
         $user_id = Auth::id();
         $data = $request;
 
@@ -68,7 +69,7 @@ class CartController extends Controller
         }
         $total_price = array_sum($prices);
 
-        return view('user.check', compact('cart_products', 'data', 'total_price'));
+        return view('user.check', compact('user', 'cart_products', 'data', 'total_price'));
     }
 
     //購入履歴に追加

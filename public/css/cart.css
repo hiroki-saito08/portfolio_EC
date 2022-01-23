@@ -1,0 +1,109 @@
+#cart-noinside h1{
+  font-size: 30px;
+  font-weight: 100;
+  margin: 20px;
+}
+
+#cart-parent{
+  display: flex;
+  justify-content: space-between;
+}
+
+#cart-box{
+  display: flex;
+    margin: 30px;
+    /* width: 100%; */
+    background-color: #e5e5e5;
+}
+
+#cart-img{
+  width: 70%;
+  height: 30vh;
+  object-fit: contain;
+}
+
+#cart-value{
+  display: block;
+  margin: 20px;
+  width: 200px;
+  align-self: end;
+}
+
+#cart-value h1{
+  margin-bottom: 20px;
+  font-family: monospace;
+  font-size: 15px;
+}
+
+#cart-delete{
+  margin-top: 20px;
+}
+
+#cart-left-box{
+  width: 60%;
+}
+
+#cart-side-box{
+  width: 30%;
+  height: 210px;
+  margin: 30px;
+}
+
+#cart-total h1{
+  margin: 24px;
+  font-size: 24px;
+}
+
+.total-box-chil{
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 10px;
+}
+
+#buy-button-pare{
+  text-align: center;
+}
+
+#buy-button{
+  margin: 0 auto;
+  width: 90%;
+  height: 42px;
+  border-radius: 50px;
+  background-color: black;
+  color: #efefef;
+}
+
+#buy-button:hover{
+  margin: 0 auto;
+  width: 90%;
+  height: 42px;
+  border-radius: 50px;
+  background-color: rgb(90 90 90);
+  color: #efefef;
+}
+
+/* -------------------レスポンシブ */
+
+@media screen and (max-width: 674px) {
+  #cart-parent{
+    display: block;
+    width: 100%;
+  }
+
+  #cart-left-box {
+    width: 100%;
+  }
+
+  #cart-value{
+    display: block;
+    margin: 12px;
+    width: 200px;
+    align-self: end;
+  }
+
+  #cart-side-box {
+    width: 80%;
+    height: 210px;
+    margin: 30px auto;
+}
+}
