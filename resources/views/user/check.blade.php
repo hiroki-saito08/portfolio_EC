@@ -10,13 +10,14 @@
   <div id="check-box-bottom">
     <p>配送先住所：{{ $user->address }}</p>
     <p>配送方法：
-      <select name="">
+      <select class="check-delivery" name="">
         <option value="">郵送</option>
         <option value="">店舗受け取り</option>
         <option value="">置き配を利用する</option>
       </select>
     </p>
-    <p>配送予定日：<input type="date" name=""></p>
+    <p>配送予定日：</p>
+    <input class="check-delivery" type="date" name="">
   </div>
 </div>
 

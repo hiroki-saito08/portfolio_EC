@@ -132,4 +132,20 @@
     border: 1px solid;
     padding: 23px;
   }
+
+  #check-top-box {
+      width: 80%;
+      height: 183px;
+      background-color: #e5e5e5;
+      margin: 30px auto;
+      border: 1px solid;
+  }
+
+  #check-box-bottom p {
+      margin: 13px;
+  }
+
+  .check-delivery {
+    margin-left: 13px;
+  }
 }
