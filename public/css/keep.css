@@ -1,6 +1,6 @@
 #main{
 
-  margin: 0 20px;
+  margin: 0 auto;
 }
 #main h1{
   font-size: 30px;
@@ -12,6 +12,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  margin: 0 40px;
 }
 
 .keep-img{
@@ -22,16 +23,16 @@
 }
 
 .keep-img-box{
-  width: 30%;
+  width: 33.3%;
 }
 
-.keep-button{
-  margin: 4px;
-  width: 100px;
-  height: 30px;
-  border-radius: 50px;
-  background-color: #efefef;
-  color: #282828;
+.keep-button {
+    margin: 2px;
+    width: 96px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #efefef;
+    color: #282828;
 }
 
 .keep-button:hover{
