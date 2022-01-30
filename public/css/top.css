@@ -166,7 +166,7 @@ main{
 }
 
 .top_main_img1{
-  /* width: 100%; */
+  width: 100%;
   height: 120vh;
   object-fit: cover;
   margin: 0 auto;
