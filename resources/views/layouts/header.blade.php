@@ -36,37 +36,41 @@
           <?php $user = Auth::user(); ?>
           @auth
           <div class="h-img-right">
-                  <a href="{{ route('user.edit', $user->id )}}">
-                    <img class="logo-img" src="{{ asset('images/acount.png') }}" alt="" >
-                  </a>
+            <a href="{{ route('user.edit', $user->id )}}">
+              <img class="logo-img" src="{{ asset('images/acount.png') }}" alt="" >
+            </a>
           </div>
+
           <div class="h-img-right">
-            <!-- <a href="">
-              <img class="logo-img" src="{{ asset('images/account02.png') }}" alt="" >
-            </a> -->
             {{-- アカウント情報を追記 --}}
             <div class="mt-3 space-y-1">
               <!-- Authentication -->
-                    <form method="POST" action="{{ route('user.logout') }}">
-                      @csrf
-                      <x-responsive-nav-link :href="route('user.logout')"
-                      onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                      </x-responsive-nav-link>
-                    </form>
+              <form method="POST" action="{{ route('user.logout') }}">
+              @csrf
+              <x-responsive-nav-link :href="route('user.logout')"
+                onclick="event.preventDefault();
+                this.closest('form').submit();"
+              >
+              {{ __('Log Out') }}
+              </x-responsive-nav-link>
+              </form>
             </div>
           </div>
           @else
-          <div class="h-img-right">
-            <a href="{{ route('user.login') }}">ログイン</a>
-          </div>
-
-          <div class="h-img-right">
-            <a href="{{ route('user.register') }}">新規登録</a>
-          </div>
 
           @endauth
+        </div>
+      </div>
+      <div id="icon-menu">
+        <img class="logo-img" src="{{ asset('images/acount.png') }}" alt="" >
+      </div>
+      <div id="icon-menubox">
+        <div class="icon-login">
+          <a href="{{ route('user.login') }}">ログイン</a>
+        </div>
+
+        <div class="icon-login">
+          <a href="{{ route('user.register') }}">新規登録</a>
         </div>
       </div>
     </div>

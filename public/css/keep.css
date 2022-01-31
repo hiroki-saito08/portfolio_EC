@@ -59,6 +59,7 @@
 @media screen and (max-width: 674px) {
   .keep-img-box {
     width: 100%;
+    margin-bottom: 20px;DSA
   }
 
   .keep-main {
@@ -66,10 +67,11 @@
   }
 
   .keep-img {
-    margin: 20px;
+    margin: 0 auto;
     /* width: 90%; */
-    height: 50vh;
+    height: 22vh;
     object-fit: contain;
+    display: flex;
   }
 
 
