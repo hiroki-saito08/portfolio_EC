@@ -183,6 +183,16 @@ a{
     position: fixed;
     top: -70px;
   }
+
+  #icon-logout{
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  #icon-user-edit{
+    text-align: center;
+    margin-top: 20px;
+  }
 }
 /* ------------レスポンシブ */
 @media screen and (max-width: 675px) {
@@ -433,6 +443,7 @@ a{
     border: 1px solid;
     width: 158px;
     height: 71px;
+    transition: 0.3s;
   }
 
   #icon-menubox {
@@ -458,5 +469,19 @@ a{
 .icon-login{
   margin: 10px;
   text-align: center;
+}
+
+#icon-user-edit{
+  text-align: center;
+  margin-top: 10px;
+}
+
+#icon-logout{
+  text-align: center;
+  margin-top: 10px;
+}
+
+#account-box{
+
 }
 }
