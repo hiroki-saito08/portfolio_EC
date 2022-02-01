@@ -8,9 +8,9 @@
   <div class="keep-main">
   @foreach ($keep_products as $keep_product)
 
-      {{-- imgファイル設定 --}}
+    {{-- imgファイル設定 --}}
     @php
-      if (file_exists(asset('/images/'.$keep_product->product -> image_path))) {
+      if (file_exists('images/'.$keep_product->product -> image_path)) {
         $img = asset('/images/'.$keep_product->product -> image_path);
       }else{
         $img = asset('/storage/'.$keep_product->product -> image_path);

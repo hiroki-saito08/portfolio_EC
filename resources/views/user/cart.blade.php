@@ -17,7 +17,7 @@
 
     {{-- imgファイル設定 --}}
     @php
-      if (file_exists(asset('/images/'.$cart_product->product -> image_path))) {
+      if (file_exists('images/'.$cart_product->product -> image_path)) {
         $img = asset('/images/'.$cart_product->product -> image_path);
       }else{
         $img = asset('/storage/'.$cart_product->product -> image_path);
