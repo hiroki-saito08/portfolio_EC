@@ -40,6 +40,15 @@
 <div id="check-main-box">
   <div id="check-main-left">
     @foreach ($cart_products as $cart_product)
+      {{-- imgファイル設定 --}}
+      @php
+        if (file_exists(asset('/images/'.$cart_product->product -> image_path))) {
+          $img = asset('/images/'.$cart_product->product -> image_path);
+        }else{
+          $img = asset('/storage/'.$cart_product->product -> image_path);
+        }
+      @endphp
+
       <form method="post" action="{{ route('user.cart.purchase') }}">
         @csrf
 
@@ -48,7 +57,7 @@
         </div>
 
         <div class="check-img-box">
-          <img class="check-img" src="{{ asset('/storage/'.$cart_product->product -> image_path) }}" alt="画像が登録されてません">
+          <img class="check-img" src="{{ $img }}" alt="画像が登録されてません">
           <div class="check-img-right">
             <div class="check-value">{{ $cart_product->product->name }}</div>
 

@@ -7,10 +7,20 @@
   <!-- キープした商品をテーブル表示 -->
   <div class="keep-main">
   @foreach ($keep_products as $keep_product)
+
+      {{-- imgファイル設定 --}}
+    @php
+      if (file_exists(asset('/images/'.$keep_product->product -> image_path))) {
+        $img = asset('/images/'.$keep_product->product -> image_path);
+      }else{
+        $img = asset('/storage/'.$keep_product->product -> image_path);
+      }
+    @endphp
+
     @if($keep_products->count())
 
     <div class="keep-img-box">
-      <img class="keep-img" src="{{ asset('/storage/'.$keep_product->product -> image_path) }}" alt="画像が登録されてません">
+      <img class="keep-img" src="{{ $img }}" alt="画像が登録されてません">
       <div class="keep-praice-box">
         <p>{{$keep_product->product->name}}</p>
         <p>￥{{$keep_product->product->price}}</p>
