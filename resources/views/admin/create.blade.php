@@ -67,6 +67,7 @@
                                 <option value="women">women</option>
                                 <option value="mens_and_womens">mens_and_women</option>
                                 <option value="kids">kids</option>
+                                <option value="kids">other</option>
                               </select>
                             </div>
                           </div>
