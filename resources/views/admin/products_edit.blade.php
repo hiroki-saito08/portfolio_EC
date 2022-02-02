@@ -67,6 +67,7 @@
                                 <option @if( $product->gender == 'women' )selected @endif value="women">women</option>
                                 <option @if( $product->gender == 'mens_and_women' )selected @endif value="mens_and_women">mens_and_women</option>
                                 <option @if( $product->gender == 'kids' )selected @endif value="kids">kids</option>
+                                <option @if( $product->gender == 'other' )selected @endif value="other">other</option>
                               </select>
                             </div>
                           </div>

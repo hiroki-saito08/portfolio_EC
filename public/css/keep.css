@@ -1,6 +1,6 @@
 #main{
 
-  margin: 0 20px;
+  margin: 0 auto;
 }
 #main h1{
   font-size: 30px;
@@ -12,31 +12,33 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  margin: 0 40px;
 }
 
 .keep-img{
   margin: 20px;
   width: 90%;
   height: 40vh;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .keep-img-box{
-  width: 30%;
+  width: 33.3%;
+  margin-bottom: 20px;
 }
 
-.keep-button{
-  margin: 4px;
-  width: 100px;
-  height: 30px;
-  border-radius: 50px;
-  background-color: #efefef;
-  color: #282828;
+.keep-button {
+    margin: 2px;
+    width: 96px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #efefef;
+    color: #282828;
 }
 
 .keep-button:hover{
-  margin: 4px;
-  width: 100px;
+  margin: 2px;
+  width: 96px;
   height: 30px;
   border-radius: 50px;
   background-color: #404040;
@@ -58,6 +60,7 @@
 @media screen and (max-width: 674px) {
   .keep-img-box {
     width: 100%;
+    margin-bottom: 20px;DSA
   }
 
   .keep-main {
@@ -65,11 +68,18 @@
   }
 
   .keep-img {
-    margin: 20px;
+    margin: 0 auto;
     /* width: 90%; */
-    height: 50vh;
+    height: 22vh;
     object-fit: contain;
+    display: flex;
   }
 
-
+  .keep-img {
+    margin: 0 auto;
+    width: 90%;
+    height: 42vh;
+    object-fit: cover;
+    display: flex;
+}
 }

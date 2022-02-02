@@ -38,7 +38,7 @@ Route::get('product/{id}/show', [ProductController::class, 'show'])->name('produ
 //検索機能
 Route::get('search', [ProductController::class, 'search'])->name('product.search');
 // aタグからの送信
-Route::get('{category}/search', [ProductController::class, 'a_search'])->name('product.a_search');
+Route::get('{category}/{gender}/search', [ProductController::class, 'a_search'])->name('product.a_search');
 
 
 //ユーザー情報編集ページ

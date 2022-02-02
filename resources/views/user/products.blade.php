@@ -11,11 +11,22 @@
   {{ session('message') }}
   </div>
   @endif
-  <div id="products_box">
+  <div id="p_box_pa">
+   <div id="products_box">
     @foreach($all_products as $product)
+
+    {{-- imgファイル設定 --}}
+    @php
+      if (file_exists('images/'.$product -> image_path)) {
+        $img = asset('/images/'.$product -> image_path);
+      }else{
+        $img = asset('/storage/'.$product -> image_path);
+      }
+    @endphp
+
       <div class="product_contents">
         <a>
-          <img data-target="{{$product->id}}" class="click_pop" src="{{ asset('/storage/'.$product -> image_path) }}" alt="画像が登録されてません">
+          <img data-target="{{$product->id}}" class="click_pop" src="{{ $img }}" alt="画像が登録されてません">
         </a>
 
         <div class="products-name">
@@ -34,13 +45,12 @@
           </p>
         </div>
 
-
         {{-- ここをモーダルで表示する --}}
         <div class="pop_area" id="{{$product->id}}">
             <div id="modal_pop_area">
             <div class="pop_top">
               <div>
-                <img src="{{ asset('/storage/'.$product -> image_path) }}" alt="画像が登録されてません" class="pop_img">
+                <img src="{{ $img }}" alt="画像が登録されてません" class="pop_img">
               </div>
             </div>
 
@@ -91,6 +101,7 @@
 
       </div>
     @endforeach
+    </div>
   </div>
 
 
