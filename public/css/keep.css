@@ -19,7 +19,7 @@
   margin: 20px;
   width: 90%;
   height: 40vh;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .keep-img-box{
@@ -75,5 +75,11 @@
     display: flex;
   }
 
-
+  .keep-img {
+    margin: 0 auto;
+    width: 90%;
+    height: 42vh;
+    object-fit: cover;
+    display: flex;
+}
 }
