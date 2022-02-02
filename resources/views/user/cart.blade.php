@@ -14,12 +14,22 @@
   </script>
 
    @foreach ($cart_products as $cart_product)
+
+    {{-- imgファイル設定 --}}
+    @php
+      if (file_exists('images/'.$cart_product->product -> image_path)) {
+        $img = asset('/images/'.$cart_product->product -> image_path);
+      }else{
+        $img = asset('/storage/'.$cart_product->product -> image_path);
+      }
+    @endphp
+
    <form method="post" action="{{ route('user.cart.check') }}">
     @csrf
 
     <input type="hidden" name="product{{ $cart_product->product_id }}_id" value="{{ $cart_product->product_id }}" form="purchase_id">
       <div id="cart-box">
-        <img src="{{ asset('/storage/'.$cart_product->product -> image_path) }}" alt="画像が登録されてません" id="cart-img">
+        <img src="{{ $img }}" alt="画像が登録されてません" id="cart-img">
 
         <div id="cart-value">
           <h1>{{ $cart_product->product->name }}</h1>

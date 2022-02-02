@@ -6,20 +6,20 @@
 <!-- ↓スライダー本体 -->
 <div id="slider-box">
   <ul class="thumb-item">
-       <li><a href=""><img class="slider-main" src="{{ asset('/storage/'.'model5.jpg') }}" alt="画像が登録されてません"></a></li>
-       <li><a href=""><img class="slider-main" src="{{ asset('/storage/'.'model2.jpg') }}" alt="画像が登録されてません"></a></li>
-       <li><a href=""><img class="slider-main" src="{{ asset('/storage/'.'model3.jpg') }}" alt="画像が登録されてません"></a></li>
-       <li><a href=""><img class="slider-main" src="{{ asset('/storage/'.'model4.jpg') }}" alt="画像が登録されてません"></a></li>
-       <li><a href=""><img class="slider-main" src="{{ asset('/storage/'.'model1.jpg') }}" alt="画像が登録されてません"></a></li>
+       <li><a href=""><img class="slider-main" src="{{ asset('/images/'.'model5.jpg') }}" alt="画像が登録されてません"></a></li>
+       <li><a href=""><img class="slider-main" src="{{ asset('/images/'.'model2.jpg') }}" alt="画像が登録されてません"></a></li>
+       <li><a href=""><img class="slider-main" src="{{ asset('/images/'.'model3.jpg') }}" alt="画像が登録されてません"></a></li>
+       <li><a href=""><img class="slider-main" src="{{ asset('/images/'.'model4.jpg') }}" alt="画像が登録されてません"></a></li>
+       <li><a href=""><img class="slider-main" src="{{ asset('/images/'.'model1.jpg') }}" alt="画像が登録されてません"></a></li>
   </ul>
   <!-- ↓サムネイル -->
   <!-- <div id="slider-box"> -->
     <ul class="thumb-item-nav">
-        <li><a href="#"><img class="slider-img" src="{{ asset('/storage/'.'model5.jpg') }}" alt="画像が登録されてません"></a></li>
-        <li><a href="#"><img class="slider-img" src="{{ asset('/storage/'.'model2.jpg') }}" alt="画像が登録されてません"></a></li>
-        <li><a href="#"><img class="slider-img" src="{{ asset('/storage/'.'model3.jpg') }}" alt="画像が登録されてません"></a></li>
-        <li><a href="#"><img class="slider-img" src="{{ asset('/storage/'.'model4.jpg') }}" alt="画像が登録されてません"></a></li>
-        <li><a href="#"><img class="slider-img" src="{{ asset('/storage/'.'model1.jpg') }}" alt="画像が登録されてません"></a></li>
+        <li><a href="#"><img class="slider-img" src="{{ asset('/images/'.'model5.jpg') }}" alt="画像が登録されてません"></a></li>
+        <li><a href="#"><img class="slider-img" src="{{ asset('/images/'.'model2.jpg') }}" alt="画像が登録されてません"></a></li>
+        <li><a href="#"><img class="slider-img" src="{{ asset('/images/'.'model3.jpg') }}" alt="画像が登録されてません"></a></li>
+        <li><a href="#"><img class="slider-img" src="{{ asset('/images/'.'model4.jpg') }}" alt="画像が登録されてません"></a></li>
+        <li><a href="#"><img class="slider-img" src="{{ asset('/images/'.'model1.jpg') }}" alt="画像が登録されてません"></a></li>
     </ul>
 </div>
 <!-- </div> -->
@@ -53,7 +53,7 @@
 <div id="main-box">
   <div id="top_img_box">
     <a href="{{ route('user.products') }}">
-      <img class="top_main_img1" src="{{ asset('/storage/'.'model8.jpg') }}" alt="画像が登録されてません">
+      <img class="top_main_img1" src="{{ asset('/images/'.'model8.jpg') }}" alt="画像が登録されてません">
     </a>
   </div>
 
@@ -61,7 +61,7 @@
 
   <div id="top_img_box">
     <a href="{{ route('user.products') }}">
-      <img class="top_main_img" src="{{ asset('/storage/'.'model7.jpg') }}" alt="画像が登録されてません">
+      <img class="top_main_img" src="{{ asset('/images/'.'model7.jpg') }}" alt="画像が登録されてません">
     </a>
   </div>
 </div>
@@ -84,7 +84,7 @@
 
   <div id="big_image">
     <a href="{{ route('user.products') }}">
-      <img class="top_main_img" src="{{ asset('/storage/'.'jacket1.jpg') }}" alt="画像が登録されてません">
+      <img class="top_main_img" src="{{ asset('/images/'.'jacket1.jpg') }}" alt="画像が登録されてません">
     </a>
   </div>
 

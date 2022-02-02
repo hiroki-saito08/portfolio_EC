@@ -1,9 +1,3 @@
-.click_pop{
-  width: 224px;
-  height: 260px;
-  object-fit: cover;
-  margin-bottom: 27px;
-}
 
 #products_box{
   display: flex;
@@ -13,11 +7,49 @@
   margin-top: 40px;
 }
 
-.product_contents{
+.product_contents {
   margin: 20px;
+  width: 90%;
 }
 
 .products-name p{
   margin-bottom: 10px;
   font-size: 14px;
+}
+
+.click_pop {
+  width: 100%;
+  margin-bottom: 2px;
+}
+@media screen and (min-width: 674px) {
+  .product_contents {
+    margin: 20px;
+    width: 230px;
+  }
+
+  .click_pop{
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    margin-bottom: 27px;
+  }
+
+  #products_box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+#p_box_pa{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.click_pop {
+  width: 100%;
+  margin-bottom: 2px;
+}
 }

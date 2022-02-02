@@ -9,7 +9,21 @@ a{
   margin: -5px;
 }
 
+#logout-button {
+  border: aliceblue;
+  background-color: #dddddd00;
+}
+
 @media screen and (min-width: 674px) {
+  #logout-button {
+    border: aliceblue;
+    background-color: #ffffff00;
+  }
+
+  #icon-menu{
+    margin-right: 19px;
+    margin-top: 27px;
+  }
 
   #cart-favorite{
     display: flex;
@@ -47,7 +61,7 @@ a{
     margin-top: 27px;
     display: flex;
     margin-left: auto;
-    padding-right: 15px;
+    padding-right: 17px;
   }
 
   #searchform{
@@ -63,16 +77,43 @@ a{
     display: flex;
     align-items: center;
     margin-top: 25px;
-    margin-right: 40px;
+    margin-right: 6px;
   }
 
+  #icon-menubox {
+    /* z-index: -1; */
+    position: fixed;
+    right: -100px;
+ }
+
+    #icon-menubox.open {
+    width: 112px;
+    height: 97px;
+    background-color: #ffffffbf;
+    position: fixed;
+    top: 59px;
+    right: 0px;
+    z-index: 10;
+    display: block;
+    transition: 0.3s;
+    border: 1px solid;
+}
+
   .h-img-right{
-    margin: 0 10px;
+    margin: 20px 5px;
+  }
+
+  .icon-login{
+    margin: 20px 24px;
   }
 
   .logo-img{
     width: 30px;
     height: 30px;
+  }
+
+  .icon-menu{
+    margin-left: 4px;
   }
 
   #form-button button{
@@ -151,6 +192,16 @@ a{
     position: fixed;
     top: -70px;
   }
+
+  #icon-logout{
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  #icon-user-edit{
+    text-align: center;
+    margin-top: 20px;
+  }
 }
 /* ------------レスポンシブ */
 @media screen and (max-width: 675px) {
@@ -160,7 +211,7 @@ a{
     justify-content: center;
     position: fixed;
     top: 20px;
-    right: 67px;
+    right: 93px;
   }
 
   #headerBox{
@@ -211,7 +262,7 @@ a{
   }
 
   .h-img-right{
-    margin: 0 10px;
+    margin-right: 13px;
   }
 
   .logo-img{
@@ -384,4 +435,62 @@ a{
   .btn-line.open::after {
     transform: rotate(-45deg);  /* 下の線を傾ける */
   }
+
+  #icon-menu {
+    position: fixed;
+    top: 20px;
+    right: 65px;
+    z-index: 10;
+  }
+
+  #icon-menubox.open {
+    position: fixed;
+    top: 64px;
+    right: 0px;
+    z-index: 10;
+    background-color: #c9c9c9de;
+    border: 1px solid;
+    width: 158px;
+    height: 71px;
+    transition: 0.3s;
+  }
+
+  #icon-menubox {
+    position: fixed;
+    top: 50px;
+    right: -104px;
+    z-index: 10;
+    background-color: aliceblue;
+    border: 1px solid;
+    width: 99px;
+    height: 84px;
+  }
+
+  #cart-favorite {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 20px;
+    right: 93px;
+    z-index: 10;
+}
+
+.icon-login{
+  margin: 10px;
+  text-align: center;
+}
+
+#icon-user-edit{
+  text-align: center;
+  margin-top: 10px;
+}
+
+#icon-logout{
+  text-align: center;
+  margin-top: 10px;
+}
+
+#account-box{
+
+}
 }
