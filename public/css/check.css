@@ -110,7 +110,7 @@
   }
 
   #check-main-left {
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
     border: 1px solid;
     padding: 23px;
@@ -128,7 +128,7 @@
   }
 
   #check-cart-total {
-    width: 50%;
+    width: 80%;
     margin: 20px auto;
     border: 1px solid;
     padding: 23px;

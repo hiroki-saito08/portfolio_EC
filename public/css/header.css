@@ -9,7 +9,16 @@ a{
   margin: -5px;
 }
 
+#logout-button {
+  border: aliceblue;
+  background-color: #dddddd00;
+}
+
 @media screen and (min-width: 674px) {
+  #logout-button {
+    border: aliceblue;
+    background-color: #ffffff00;
+  }
 
   #icon-menu{
     margin-right: 19px;

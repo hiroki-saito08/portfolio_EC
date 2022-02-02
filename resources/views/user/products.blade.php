@@ -11,7 +11,8 @@
   {{ session('message') }}
   </div>
   @endif
-  <div id="products_box">
+  <div id="p_box_pa">
+   <div id="products_box">
     @foreach($all_products as $product)
       <div class="product_contents">
         <a>
@@ -33,7 +34,6 @@
             サイズ： {{ $product -> size }}
           </p>
         </div>
-
 
         {{-- ここをモーダルで表示する --}}
         <div class="pop_area" id="{{$product->id}}">
@@ -91,6 +91,7 @@
 
       </div>
     @endforeach
+    </div>
   </div>
 
 

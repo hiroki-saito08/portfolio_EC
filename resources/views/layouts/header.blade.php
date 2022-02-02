@@ -58,7 +58,7 @@
               >
 
               <div id="icon-logout">
-                <button type="submit" id="logout-button">logout</button>
+                <button type="submit" id="logout-button">LOGOUT</button>
               </div>
               </x-responsive-nav-link>
               </form>
