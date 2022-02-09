@@ -78,7 +78,7 @@ main{
   width: 126px;
   height: 36px;
   border-radius: 50px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 #add-carts:hover{
@@ -94,14 +94,14 @@ main{
   width: 80%;
   height: 36px;
   border-radius: 50px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 #cart-add-carts:hover{
   width: 80%;
   height: 36px;
   border-radius: 50px;
-  border: 2px solid gray;
+  /* border: 2px solid gray; */
   background-color: gray;
   color: aliceblue;
 }
