@@ -1,5 +1,8 @@
+<link rel="stylesheet" href="{{ asset('css/addStyle.css') }}">
+
 <x-guest-layout>
     <x-auth-card>
+        REGISTER
         <x-slot name="logo">
             <a href="/">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
@@ -9,7 +12,7 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('user.register') }}">
+        <form method="POST" action="{{ route('user.register') }}" >
             @csrf
 
             <!-- Name -->
@@ -46,7 +49,7 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('user.login') }}">
+                <a class="underline text-sm login-logout-form hover:text-gray-900" href="{{ route('user.login') }}">
                     {{ __('Already registered?') }}
                 </a>
 
@@ -55,5 +58,6 @@
                 </x-button>
             </div>
         </form>
+            <a class="hover:text-gray-900" href=" {{route('user.login')}} ">go to LOGIN</a>
     </x-auth-card>
 </x-guest-layout>
