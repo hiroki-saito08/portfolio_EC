@@ -8,16 +8,22 @@
     <p>1.お届け先情報</p>
   </div>
   <div id="check-box-bottom">
-    <p>配送先住所：{{ $user->address }}</p>
-    <p>配送方法：
-      <select class="check-delivery" name="">
+    <div class="check-form">
+      <label>配送先住所：</label>
+      <input class="check-form-textarea" type="textarea">
+    </div>
+    <div class="check-form">
+      <label>配送方法：</label>
+      <select class="" name="">
         <option value="">郵送</option>
         <option value="">店舗受け取り</option>
         <option value="">置き配を利用する</option>
       </select>
-    </p>
-    <p>配送予定日：</p>
-    <input class="check-delivery" type="date" name="">
+    </div>
+    <div class="check-form">
+      <label>配送予定日：</label>
+      <input class="" type="date" name="">
+    </div>
   </div>
 </div>
 
@@ -26,14 +32,15 @@
     <p>2.お支払い方法</p>
   </div>
   <div id="check-box-bottom">
-    <p>お支払い方法の選択</p>
-      <input type="checkbox" id="scales" name="scales" checked>
-      <label for="scales">クレジットカード</label>
-      <input type="checkbox" id="scales" name="scales" >
-      <label for="scales">コンビニ払い</label>
-      <input type="checkbox" id="scales" name="scales" >
-      <label for="scales">代金引換</label>
-    <p>カードを追加</p>
+    <p class="payment-label">お支払い方法の選択</p>
+    <div class="for-payment">
+      <input type="radio" id="payment" name="payment" checked>
+      <label for="payment">クレジットカード</label>
+      <input type="radio" id="payment" name="payment" >
+      <label for="payment">コンビニ払い</label>
+      <input type="radio" id="payment" name="payment" >
+      <label for="payment">代金引換</label>
+    </div>
   </div>
 </div>
 
