@@ -1,4 +1,6 @@
-/* ログイン、ログアウトページ */
+
+@media screen and (min-width: 675px) {
+  /* ログイン、ログアウトページ */
 
 .login-logout-form{
   color: aliceblue;
@@ -20,4 +22,29 @@
 
 .payment-label{
   padding-top: 10px;
+}
+}
+@media screen and (max-width: 674px) {
+  .login-logout-form{
+    color: aliceblue;
+  }
+
+  .check-form{
+    padding: 3px;
+    margin: 3px;
+    margin-left: 10px;
+  }
+
+  .check-form-textarea{
+    resize: none;
+    height:20px;
+  }
+
+  .for-payment{
+    
+  }
+
+  .payment-label{
+    padding-top: 10px;
+  }
 }
