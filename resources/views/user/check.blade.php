@@ -34,12 +34,16 @@
   <div id="check-box-bottom">
     <p class="payment-label">お支払い方法の選択</p>
     <div class="for-payment">
-      <input type="radio" id="payment" name="payment" checked>
-      <label for="payment">クレジットカード</label>
-      <input type="radio" id="payment" name="payment" >
-      <label for="payment">コンビニ払い</label>
-      <input type="radio" id="payment" name="payment" >
-      <label for="payment">代金引換</label>
+
+      <div class="check" for="payment">クレジットカード
+        <input type="radio" id="payment" name="payment" checked>
+      </div>
+      <div class="check" for="payment">コンビニ払い
+        <input type="radio" id="payment" name="payment" >
+      </div>
+      <div class="check" for="payment">代金引換
+        <input type="radio" id="payment" name="payment" >
+      </div>
     </div>
   </div>
 </div>
