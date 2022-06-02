@@ -2,7 +2,7 @@
   <!-- ヘッダー部分 -->
     <div id="headerBox">
         <div id="top-logo">
-          <a href="/">
+          <a href="{{ route('user.top') }}">
             <img id="logo-size" src="{{ asset('images/logo.png') }}" alt="logo">
           </a>
         </div>
